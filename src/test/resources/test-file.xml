@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<document>
+    <text>
+        <p xml:id="p1">
+            <s xml:id="p1s1">Hello world.</s> <s id="p1s2">Goodbye cruel world.</s>
+        </p>
+        <p>
+            <s>This is the first sentence in the second paragraph.</s>
+            <s>This is the second sentence in the second paragraph.</s>
+        </p>
+    </text>
+</document>

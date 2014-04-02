@@ -1,0 +1,2557 @@
+{
+    "steps": [
+        {
+            "metadata": {
+                "producedBy": "org.anc.lapps.stanford.SATokenizer:1.3.0",
+                "contains": "token"
+            },
+            "annotations": [
+                {
+                    "start": 3,
+                    "end": 13,
+                    "metadata": {
+
+                    },
+                    "id": "tok0",
+                    "label": "token",
+                    "features": {
+                        "word": "Message-ID"
+                    }
+                },
+                {
+                    "start": 13,
+                    "end": 14,
+                    "metadata": {
+
+                    },
+                    "id": "tok1",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 15,
+                    "end": 59,
+                    "metadata": {
+
+                    },
+                    "id": "tok2",
+                    "label": "token",
+                    "features": {
+                        "word": "<3024882.1075852475408.JavaMail.evans@thyme>"
+                    }
+                },
+                {
+                    "start": 60,
+                    "end": 64,
+                    "metadata": {
+
+                    },
+                    "id": "tok3",
+                    "label": "token",
+                    "features": {
+                        "word": "Date"
+                    }
+                },
+                {
+                    "start": 64,
+                    "end": 65,
+                    "metadata": {
+
+                    },
+                    "id": "tok4",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 66,
+                    "end": 69,
+                    "metadata": {
+
+                    },
+                    "id": "tok5",
+                    "label": "token",
+                    "features": {
+                        "word": "Sat"
+                    }
+                },
+                {
+                    "start": 69,
+                    "end": 70,
+                    "metadata": {
+
+                    },
+                    "id": "tok6",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 71,
+                    "end": 73,
+                    "metadata": {
+
+                    },
+                    "id": "tok7",
+                    "label": "token",
+                    "features": {
+                        "word": "25"
+                    }
+                },
+                {
+                    "start": 74,
+                    "end": 77,
+                    "metadata": {
+
+                    },
+                    "id": "tok8",
+                    "label": "token",
+                    "features": {
+                        "word": "Aug"
+                    }
+                },
+                {
+                    "start": 78,
+                    "end": 82,
+                    "metadata": {
+
+                    },
+                    "id": "tok9",
+                    "label": "token",
+                    "features": {
+                        "word": "2001"
+                    }
+                },
+                {
+                    "start": 83,
+                    "end": 91,
+                    "metadata": {
+
+                    },
+                    "id": "tok10",
+                    "label": "token",
+                    "features": {
+                        "word": "18:17:17"
+                    }
+                },
+                {
+                    "start": 92,
+                    "end": 97,
+                    "metadata": {
+
+                    },
+                    "id": "tok11",
+                    "label": "token",
+                    "features": {
+                        "word": "-0700"
+                    }
+                },
+                {
+                    "start": 98,
+                    "end": 99,
+                    "metadata": {
+
+                    },
+                    "id": "tok12",
+                    "label": "token",
+                    "features": {
+                        "word": "-LRB-"
+                    }
+                },
+                {
+                    "start": 99,
+                    "end": 102,
+                    "metadata": {
+
+                    },
+                    "id": "tok13",
+                    "label": "token",
+                    "features": {
+                        "word": "PDT"
+                    }
+                },
+                {
+                    "start": 102,
+                    "end": 103,
+                    "metadata": {
+
+                    },
+                    "id": "tok14",
+                    "label": "token",
+                    "features": {
+                        "word": "-RRB-"
+                    }
+                },
+                {
+                    "start": 104,
+                    "end": 108,
+                    "metadata": {
+
+                    },
+                    "id": "tok15",
+                    "label": "token",
+                    "features": {
+                        "word": "From"
+                    }
+                },
+                {
+                    "start": 108,
+                    "end": 109,
+                    "metadata": {
+
+                    },
+                    "id": "tok16",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 110,
+                    "end": 121,
+                    "metadata": {
+
+                    },
+                    "id": "tok17",
+                    "label": "token",
+                    "features": {
+                        "word": "cfr@vnf.com"
+                    }
+                },
+                {
+                    "start": 122,
+                    "end": 124,
+                    "metadata": {
+
+                    },
+                    "id": "tok18",
+                    "label": "token",
+                    "features": {
+                        "word": "To"
+                    }
+                },
+                {
+                    "start": 124,
+                    "end": 125,
+                    "metadata": {
+
+                    },
+                    "id": "tok19",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 126,
+                    "end": 151,
+                    "metadata": {
+
+                    },
+                    "id": "tok20",
+                    "label": "token",
+                    "features": {
+                        "word": "linda.robertson@enron.com"
+                    }
+                },
+                {
+                    "start": 152,
+                    "end": 159,
+                    "metadata": {
+
+                    },
+                    "id": "tok21",
+                    "label": "token",
+                    "features": {
+                        "word": "Subject"
+                    }
+                },
+                {
+                    "start": 159,
+                    "end": 160,
+                    "metadata": {
+
+                    },
+                    "id": "tok22",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 161,
+                    "end": 171,
+                    "metadata": {
+
+                    },
+                    "id": "tok23",
+                    "label": "token",
+                    "features": {
+                        "word": "PRIVILEGED"
+                    }
+                },
+                {
+                    "start": 172,
+                    "end": 175,
+                    "metadata": {
+
+                    },
+                    "id": "tok24",
+                    "label": "token",
+                    "features": {
+                        "word": "AND"
+                    }
+                },
+                {
+                    "start": 176,
+                    "end": 188,
+                    "metadata": {
+
+                    },
+                    "id": "tok25",
+                    "label": "token",
+                    "features": {
+                        "word": "CONFIDENTIAL"
+                    }
+                },
+                {
+                    "start": 189,
+                    "end": 190,
+                    "metadata": {
+
+                    },
+                    "id": "tok26",
+                    "label": "token",
+                    "features": {
+                        "word": "-"
+                    }
+                },
+                {
+                    "start": 191,
+                    "end": 202,
+                    "metadata": {
+
+                    },
+                    "id": "tok27",
+                    "label": "token",
+                    "features": {
+                        "word": "Christopher"
+                    }
+                },
+                {
+                    "start": 203,
+                    "end": 210,
+                    "metadata": {
+
+                    },
+                    "id": "tok28",
+                    "label": "token",
+                    "features": {
+                        "word": "Stelzer"
+                    }
+                },
+                {
+                    "start": 211,
+                    "end": 216,
+                    "metadata": {
+
+                    },
+                    "id": "tok29",
+                    "label": "token",
+                    "features": {
+                        "word": "Draft"
+                    }
+                },
+                {
+                    "start": 217,
+                    "end": 229,
+                    "metadata": {
+
+                    },
+                    "id": "tok30",
+                    "label": "token",
+                    "features": {
+                        "word": "Mime-Version"
+                    }
+                },
+                {
+                    "start": 229,
+                    "end": 230,
+                    "metadata": {
+
+                    },
+                    "id": "tok31",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 231,
+                    "end": 234,
+                    "metadata": {
+
+                    },
+                    "id": "tok32",
+                    "label": "token",
+                    "features": {
+                        "word": "1.0"
+                    }
+                },
+                {
+                    "start": 235,
+                    "end": 247,
+                    "metadata": {
+
+                    },
+                    "id": "tok33",
+                    "label": "token",
+                    "features": {
+                        "word": "Content-Type"
+                    }
+                },
+                {
+                    "start": 247,
+                    "end": 248,
+                    "metadata": {
+
+                    },
+                    "id": "tok34",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 249,
+                    "end": 259,
+                    "metadata": {
+
+                    },
+                    "id": "tok35",
+                    "label": "token",
+                    "features": {
+                        "word": "text/plain"
+                    }
+                },
+                {
+                    "start": 259,
+                    "end": 260,
+                    "metadata": {
+
+                    },
+                    "id": "tok36",
+                    "label": "token",
+                    "features": {
+                        "word": ";"
+                    }
+                },
+                {
+                    "start": 261,
+                    "end": 268,
+                    "metadata": {
+
+                    },
+                    "id": "tok37",
+                    "label": "token",
+                    "features": {
+                        "word": "charset"
+                    }
+                },
+                {
+                    "start": 268,
+                    "end": 269,
+                    "metadata": {
+
+                    },
+                    "id": "tok38",
+                    "label": "token",
+                    "features": {
+                        "word": "="
+                    }
+                },
+                {
+                    "start": 269,
+                    "end": 277,
+                    "metadata": {
+
+                    },
+                    "id": "tok39",
+                    "label": "token",
+                    "features": {
+                        "word": "us-ascii"
+                    }
+                },
+                {
+                    "start": 278,
+                    "end": 303,
+                    "metadata": {
+
+                    },
+                    "id": "tok40",
+                    "label": "token",
+                    "features": {
+                        "word": "Content-Transfer-Encoding"
+                    }
+                },
+                {
+                    "start": 303,
+                    "end": 304,
+                    "metadata": {
+
+                    },
+                    "id": "tok41",
+                    "label": "token",
+                    "features": {
+                        "word": ":"
+                    }
+                },
+                {
+                    "start": 305,
+                    "end": 309,
+                    "metadata": {
+
+                    },
+                    "id": "tok42",
+                    "label": "token",
+                    "features": {
+                        "word": "7bit"
+                    }
+                },
+                {
+                    "start": 312,
+                    "end": 320,
+                    "metadata": {
+
+                    },
+                    "id": "tok43",
+                    "label": "token",
+                    "features": {
+                        "word": "Attached"
+                    }
+                },
+                {
+                    "start": 321,
+                    "end": 323,
+                    "metadata": {
+
+                    },
+                    "id": "tok44",
+                    "label": "token",
+                    "features": {
+                        "word": "is"
+                    }
+                },
+                {
+                    "start": 324,
+                    "end": 327,
+                    "metadata": {
+
+                    },
+                    "id": "tok45",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 328,
+                    "end": 333,
+                    "metadata": {
+
+                    },
+                    "id": "tok46",
+                    "label": "token",
+                    "features": {
+                        "word": "draft"
+                    }
+                },
+                {
+                    "start": 334,
+                    "end": 343,
+                    "metadata": {
+
+                    },
+                    "id": "tok47",
+                    "label": "token",
+                    "features": {
+                        "word": "testimony"
+                    }
+                },
+                {
+                    "start": 344,
+                    "end": 346,
+                    "metadata": {
+
+                    },
+                    "id": "tok48",
+                    "label": "token",
+                    "features": {
+                        "word": "of"
+                    }
+                },
+                {
+                    "start": 347,
+                    "end": 358,
+                    "metadata": {
+
+                    },
+                    "id": "tok49",
+                    "label": "token",
+                    "features": {
+                        "word": "Christopher"
+                    }
+                },
+                {
+                    "start": 359,
+                    "end": 366,
+                    "metadata": {
+
+                    },
+                    "id": "tok50",
+                    "label": "token",
+                    "features": {
+                        "word": "Stelzer"
+                    }
+                },
+                {
+                    "start": 366,
+                    "end": 367,
+                    "metadata": {
+
+                    },
+                    "id": "tok51",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 368,
+                    "end": 370,
+                    "metadata": {
+
+                    },
+                    "id": "tok52",
+                    "label": "token",
+                    "features": {
+                        "word": "on"
+                    }
+                },
+                {
+                    "start": 371,
+                    "end": 377,
+                    "metadata": {
+
+                    },
+                    "id": "tok53",
+                    "label": "token",
+                    "features": {
+                        "word": "behalf"
+                    }
+                },
+                {
+                    "start": 378,
+                    "end": 380,
+                    "metadata": {
+
+                    },
+                    "id": "tok54",
+                    "label": "token",
+                    "features": {
+                        "word": "of"
+                    }
+                },
+                {
+                    "start": 381,
+                    "end": 387,
+                    "metadata": {
+
+                    },
+                    "id": "tok55",
+                    "label": "token",
+                    "features": {
+                        "word": "Avista"
+                    }
+                },
+                {
+                    "start": 388,
+                    "end": 394,
+                    "metadata": {
+
+                    },
+                    "id": "tok56",
+                    "label": "token",
+                    "features": {
+                        "word": "Energy"
+                    }
+                },
+                {
+                    "start": 394,
+                    "end": 395,
+                    "metadata": {
+
+                    },
+                    "id": "tok57",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 397,
+                    "end": 399,
+                    "metadata": {
+
+                    },
+                    "id": "tok58",
+                    "label": "token",
+                    "features": {
+                        "word": "If"
+                    }
+                },
+                {
+                    "start": 400,
+                    "end": 408,
+                    "metadata": {
+
+                    },
+                    "id": "tok59",
+                    "label": "token",
+                    "features": {
+                        "word": "possible"
+                    }
+                },
+                {
+                    "start": 408,
+                    "end": 409,
+                    "metadata": {
+
+                    },
+                    "id": "tok60",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 410,
+                    "end": 412,
+                    "metadata": {
+
+                    },
+                    "id": "tok61",
+                    "label": "token",
+                    "features": {
+                        "word": "we"
+                    }
+                },
+                {
+                    "start": 413,
+                    "end": 418,
+                    "metadata": {
+
+                    },
+                    "id": "tok62",
+                    "label": "token",
+                    "features": {
+                        "word": "would"
+                    }
+                },
+                {
+                    "start": 419,
+                    "end": 429,
+                    "metadata": {
+
+                    },
+                    "id": "tok63",
+                    "label": "token",
+                    "features": {
+                        "word": "appreciate"
+                    }
+                },
+                {
+                    "start": 430,
+                    "end": 438,
+                    "metadata": {
+
+                    },
+                    "id": "tok64",
+                    "label": "token",
+                    "features": {
+                        "word": "comments"
+                    }
+                },
+                {
+                    "start": 439,
+                    "end": 441,
+                    "metadata": {
+
+                    },
+                    "id": "tok65",
+                    "label": "token",
+                    "features": {
+                        "word": "no"
+                    }
+                },
+                {
+                    "start": 442,
+                    "end": 447,
+                    "metadata": {
+
+                    },
+                    "id": "tok66",
+                    "label": "token",
+                    "features": {
+                        "word": "later"
+                    }
+                },
+                {
+                    "start": 448,
+                    "end": 452,
+                    "metadata": {
+
+                    },
+                    "id": "tok67",
+                    "label": "token",
+                    "features": {
+                        "word": "than"
+                    }
+                },
+                {
+                    "start": 453,
+                    "end": 457,
+                    "metadata": {
+
+                    },
+                    "id": "tok68",
+                    "label": "token",
+                    "features": {
+                        "word": "3:00"
+                    }
+                },
+                {
+                    "start": 458,
+                    "end": 460,
+                    "metadata": {
+
+                    },
+                    "id": "tok69",
+                    "label": "token",
+                    "features": {
+                        "word": "PM"
+                    }
+                },
+                {
+                    "start": 461,
+                    "end": 464,
+                    "metadata": {
+
+                    },
+                    "id": "tok70",
+                    "label": "token",
+                    "features": {
+                        "word": "EST"
+                    }
+                },
+                {
+                    "start": 465,
+                    "end": 467,
+                    "metadata": {
+
+                    },
+                    "id": "tok71",
+                    "label": "token",
+                    "features": {
+                        "word": "on"
+                    }
+                },
+                {
+                    "start": 468,
+                    "end": 474,
+                    "metadata": {
+
+                    },
+                    "id": "tok72",
+                    "label": "token",
+                    "features": {
+                        "word": "Sunday"
+                    }
+                },
+                {
+                    "start": 474,
+                    "end": 475,
+                    "metadata": {
+
+                    },
+                    "id": "tok73",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 476,
+                    "end": 482,
+                    "metadata": {
+
+                    },
+                    "id": "tok74",
+                    "label": "token",
+                    "features": {
+                        "word": "August"
+                    }
+                },
+                {
+                    "start": 483,
+                    "end": 485,
+                    "metadata": {
+
+                    },
+                    "id": "tok75",
+                    "label": "token",
+                    "features": {
+                        "word": "26"
+                    }
+                },
+                {
+                    "start": 485,
+                    "end": 486,
+                    "metadata": {
+
+                    },
+                    "id": "tok76",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 488,
+                    "end": 496,
+                    "metadata": {
+
+                    },
+                    "id": "tok77",
+                    "label": "token",
+                    "features": {
+                        "word": "Comments"
+                    }
+                },
+                {
+                    "start": 497,
+                    "end": 500,
+                    "metadata": {
+
+                    },
+                    "id": "tok78",
+                    "label": "token",
+                    "features": {
+                        "word": "can"
+                    }
+                },
+                {
+                    "start": 501,
+                    "end": 503,
+                    "metadata": {
+
+                    },
+                    "id": "tok79",
+                    "label": "token",
+                    "features": {
+                        "word": "be"
+                    }
+                },
+                {
+                    "start": 504,
+                    "end": 509,
+                    "metadata": {
+
+                    },
+                    "id": "tok80",
+                    "label": "token",
+                    "features": {
+                        "word": "faxed"
+                    }
+                },
+                {
+                    "start": 510,
+                    "end": 512,
+                    "metadata": {
+
+                    },
+                    "id": "tok81",
+                    "label": "token",
+                    "features": {
+                        "word": "to"
+                    }
+                },
+                {
+                    "start": 513,
+                    "end": 515,
+                    "metadata": {
+
+                    },
+                    "id": "tok82",
+                    "label": "token",
+                    "features": {
+                        "word": "my"
+                    }
+                },
+                {
+                    "start": 516,
+                    "end": 525,
+                    "metadata": {
+
+                    },
+                    "id": "tok83",
+                    "label": "token",
+                    "features": {
+                        "word": "attention"
+                    }
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "metadata": {
+
+                    },
+                    "id": "tok84",
+                    "label": "token",
+                    "features": {
+                        "word": "at"
+                    }
+                },
+                {
+                    "start": 529,
+                    "end": 536,
+                    "metadata": {
+
+                    },
+                    "id": "tok85",
+                    "label": "token",
+                    "features": {
+                        "word": "202/338"
+                    }
+                },
+                {
+                    "start": 536,
+                    "end": 541,
+                    "metadata": {
+
+                    },
+                    "id": "tok86",
+                    "label": "token",
+                    "features": {
+                        "word": "-2416"
+                    }
+                },
+                {
+                    "start": 542,
+                    "end": 544,
+                    "metadata": {
+
+                    },
+                    "id": "tok87",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 545,
+                    "end": 552,
+                    "metadata": {
+
+                    },
+                    "id": "tok88",
+                    "label": "token",
+                    "features": {
+                        "word": "emailed"
+                    }
+                },
+                {
+                    "start": 553,
+                    "end": 555,
+                    "metadata": {
+
+                    },
+                    "id": "tok89",
+                    "label": "token",
+                    "features": {
+                        "word": "to"
+                    }
+                },
+                {
+                    "start": 556,
+                    "end": 567,
+                    "metadata": {
+
+                    },
+                    "id": "tok90",
+                    "label": "token",
+                    "features": {
+                        "word": "cfr@vnf.com"
+                    }
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "metadata": {
+
+                    },
+                    "id": "tok91",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 571,
+                    "end": 582,
+                    "metadata": {
+
+                    },
+                    "id": "tok92",
+                    "label": "token",
+                    "features": {
+                        "word": "gdb@vnf.com"
+                    }
+                },
+                {
+                    "start": 583,
+                    "end": 584,
+                    "metadata": {
+
+                    },
+                    "id": "tok93",
+                    "label": "token",
+                    "features": {
+                        "word": "-LRB-"
+                    }
+                },
+                {
+                    "start": 584,
+                    "end": 588,
+                    "metadata": {
+
+                    },
+                    "id": "tok94",
+                    "label": "token",
+                    "features": {
+                        "word": "Gary"
+                    }
+                },
+                {
+                    "start": 589,
+                    "end": 596,
+                    "metadata": {
+
+                    },
+                    "id": "tok95",
+                    "label": "token",
+                    "features": {
+                        "word": "Bachman"
+                    }
+                },
+                {
+                    "start": 596,
+                    "end": 597,
+                    "metadata": {
+
+                    },
+                    "id": "tok96",
+                    "label": "token",
+                    "features": {
+                        "word": "-RRB-"
+                    }
+                },
+                {
+                    "start": 597,
+                    "end": 598,
+                    "metadata": {
+
+                    },
+                    "id": "tok97",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 600,
+                    "end": 605,
+                    "metadata": {
+
+                    },
+                    "id": "tok98",
+                    "label": "token",
+                    "features": {
+                        "word": "Thank"
+                    }
+                },
+                {
+                    "start": 606,
+                    "end": 609,
+                    "metadata": {
+
+                    },
+                    "id": "tok99",
+                    "label": "token",
+                    "features": {
+                        "word": "you"
+                    }
+                },
+                {
+                    "start": 609,
+                    "end": 610,
+                    "metadata": {
+
+                    },
+                    "id": "tok100",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 612,
+                    "end": 618,
+                    "metadata": {
+
+                    },
+                    "id": "tok101",
+                    "label": "token",
+                    "features": {
+                        "word": "Cheryl"
+                    }
+                },
+                {
+                    "start": 619,
+                    "end": 623,
+                    "metadata": {
+
+                    },
+                    "id": "tok102",
+                    "label": "token",
+                    "features": {
+                        "word": "Feik"
+                    }
+                },
+                {
+                    "start": 624,
+                    "end": 628,
+                    "metadata": {
+
+                    },
+                    "id": "tok103",
+                    "label": "token",
+                    "features": {
+                        "word": "Ryan"
+                    }
+                },
+                {
+                    "start": 629,
+                    "end": 632,
+                    "metadata": {
+
+                    },
+                    "id": "tok104",
+                    "label": "token",
+                    "features": {
+                        "word": "Van"
+                    }
+                },
+                {
+                    "start": 633,
+                    "end": 637,
+                    "metadata": {
+
+                    },
+                    "id": "tok105",
+                    "label": "token",
+                    "features": {
+                        "word": "Ness"
+                    }
+                },
+                {
+                    "start": 638,
+                    "end": 645,
+                    "metadata": {
+
+                    },
+                    "id": "tok106",
+                    "label": "token",
+                    "features": {
+                        "word": "Feldman"
+                    }
+                },
+                {
+                    "start": 645,
+                    "end": 646,
+                    "metadata": {
+
+                    },
+                    "id": "tok107",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 647,
+                    "end": 651,
+                    "metadata": {
+
+                    },
+                    "id": "tok108",
+                    "label": "token",
+                    "features": {
+                        "word": "P.C."
+                    }
+                },
+                {
+                    "start": 652,
+                    "end": 656,
+                    "metadata": {
+
+                    },
+                    "id": "tok109",
+                    "label": "token",
+                    "features": {
+                        "word": "1050"
+                    }
+                },
+                {
+                    "start": 657,
+                    "end": 663,
+                    "metadata": {
+
+                    },
+                    "id": "tok110",
+                    "label": "token",
+                    "features": {
+                        "word": "Thomas"
+                    }
+                },
+                {
+                    "start": 664,
+                    "end": 673,
+                    "metadata": {
+
+                    },
+                    "id": "tok111",
+                    "label": "token",
+                    "features": {
+                        "word": "Jefferson"
+                    }
+                },
+                {
+                    "start": 674,
+                    "end": 680,
+                    "metadata": {
+
+                    },
+                    "id": "tok112",
+                    "label": "token",
+                    "features": {
+                        "word": "Street"
+                    }
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "metadata": {
+
+                    },
+                    "id": "tok113",
+                    "label": "token",
+                    "features": {
+                        "word": "NW"
+                    }
+                },
+                {
+                    "start": 684,
+                    "end": 694,
+                    "metadata": {
+
+                    },
+                    "id": "tok114",
+                    "label": "token",
+                    "features": {
+                        "word": "Washington"
+                    }
+                },
+                {
+                    "start": 695,
+                    "end": 697,
+                    "metadata": {
+
+                    },
+                    "id": "tok115",
+                    "label": "token",
+                    "features": {
+                        "word": "DC"
+                    }
+                },
+                {
+                    "start": 698,
+                    "end": 703,
+                    "metadata": {
+
+                    },
+                    "id": "tok116",
+                    "label": "token",
+                    "features": {
+                        "word": "20007"
+                    }
+                },
+                {
+                    "start": 704,
+                    "end": 711,
+                    "metadata": {
+
+                    },
+                    "id": "tok117",
+                    "label": "token",
+                    "features": {
+                        "word": "202/298"
+                    }
+                },
+                {
+                    "start": 711,
+                    "end": 716,
+                    "metadata": {
+
+                    },
+                    "id": "tok118",
+                    "label": "token",
+                    "features": {
+                        "word": "-1845"
+                    }
+                },
+                {
+                    "start": 717,
+                    "end": 728,
+                    "metadata": {
+
+                    },
+                    "id": "tok119",
+                    "label": "token",
+                    "features": {
+                        "word": "cfr@vnf.com"
+                    }
+                },
+                {
+                    "start": 730,
+                    "end": 734,
+                    "metadata": {
+
+                    },
+                    "id": "tok120",
+                    "label": "token",
+                    "features": {
+                        "word": "This"
+                    }
+                },
+                {
+                    "start": 735,
+                    "end": 740,
+                    "metadata": {
+
+                    },
+                    "id": "tok121",
+                    "label": "token",
+                    "features": {
+                        "word": "email"
+                    }
+                },
+                {
+                    "start": 741,
+                    "end": 748,
+                    "metadata": {
+
+                    },
+                    "id": "tok122",
+                    "label": "token",
+                    "features": {
+                        "word": "message"
+                    }
+                },
+                {
+                    "start": 749,
+                    "end": 751,
+                    "metadata": {
+
+                    },
+                    "id": "tok123",
+                    "label": "token",
+                    "features": {
+                        "word": "is"
+                    }
+                },
+                {
+                    "start": 752,
+                    "end": 760,
+                    "metadata": {
+
+                    },
+                    "id": "tok124",
+                    "label": "token",
+                    "features": {
+                        "word": "intended"
+                    }
+                },
+                {
+                    "start": 761,
+                    "end": 767,
+                    "metadata": {
+
+                    },
+                    "id": "tok125",
+                    "label": "token",
+                    "features": {
+                        "word": "solely"
+                    }
+                },
+                {
+                    "start": 768,
+                    "end": 771,
+                    "metadata": {
+
+                    },
+                    "id": "tok126",
+                    "label": "token",
+                    "features": {
+                        "word": "for"
+                    }
+                },
+                {
+                    "start": 772,
+                    "end": 775,
+                    "metadata": {
+
+                    },
+                    "id": "tok127",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 776,
+                    "end": 786,
+                    "metadata": {
+
+                    },
+                    "id": "tok128",
+                    "label": "token",
+                    "features": {
+                        "word": "individual"
+                    }
+                },
+                {
+                    "start": 787,
+                    "end": 789,
+                    "metadata": {
+
+                    },
+                    "id": "tok129",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 790,
+                    "end": 801,
+                    "metadata": {
+
+                    },
+                    "id": "tok130",
+                    "label": "token",
+                    "features": {
+                        "word": "individuals"
+                    }
+                },
+                {
+                    "start": 802,
+                    "end": 807,
+                    "metadata": {
+
+                    },
+                    "id": "tok131",
+                    "label": "token",
+                    "features": {
+                        "word": "named"
+                    }
+                },
+                {
+                    "start": 808,
+                    "end": 813,
+                    "metadata": {
+
+                    },
+                    "id": "tok132",
+                    "label": "token",
+                    "features": {
+                        "word": "above"
+                    }
+                },
+                {
+                    "start": 813,
+                    "end": 814,
+                    "metadata": {
+
+                    },
+                    "id": "tok133",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 816,
+                    "end": 818,
+                    "metadata": {
+
+                    },
+                    "id": "tok134",
+                    "label": "token",
+                    "features": {
+                        "word": "It"
+                    }
+                },
+                {
+                    "start": 819,
+                    "end": 822,
+                    "metadata": {
+
+                    },
+                    "id": "tok135",
+                    "label": "token",
+                    "features": {
+                        "word": "may"
+                    }
+                },
+                {
+                    "start": 823,
+                    "end": 830,
+                    "metadata": {
+
+                    },
+                    "id": "tok136",
+                    "label": "token",
+                    "features": {
+                        "word": "contain"
+                    }
+                },
+                {
+                    "start": 831,
+                    "end": 843,
+                    "metadata": {
+
+                    },
+                    "id": "tok137",
+                    "label": "token",
+                    "features": {
+                        "word": "confidential"
+                    }
+                },
+                {
+                    "start": 844,
+                    "end": 859,
+                    "metadata": {
+
+                    },
+                    "id": "tok138",
+                    "label": "token",
+                    "features": {
+                        "word": "attorney-client"
+                    }
+                },
+                {
+                    "start": 860,
+                    "end": 870,
+                    "metadata": {
+
+                    },
+                    "id": "tok139",
+                    "label": "token",
+                    "features": {
+                        "word": "privileged"
+                    }
+                },
+                {
+                    "start": 871,
+                    "end": 882,
+                    "metadata": {
+
+                    },
+                    "id": "tok140",
+                    "label": "token",
+                    "features": {
+                        "word": "information"
+                    }
+                },
+                {
+                    "start": 883,
+                    "end": 889,
+                    "metadata": {
+
+                    },
+                    "id": "tok141",
+                    "label": "token",
+                    "features": {
+                        "word": "and/or"
+                    }
+                },
+                {
+                    "start": 890,
+                    "end": 898,
+                    "metadata": {
+
+                    },
+                    "id": "tok142",
+                    "label": "token",
+                    "features": {
+                        "word": "attorney"
+                    }
+                },
+                {
+                    "start": 899,
+                    "end": 903,
+                    "metadata": {
+
+                    },
+                    "id": "tok143",
+                    "label": "token",
+                    "features": {
+                        "word": "work"
+                    }
+                },
+                {
+                    "start": 904,
+                    "end": 911,
+                    "metadata": {
+
+                    },
+                    "id": "tok144",
+                    "label": "token",
+                    "features": {
+                        "word": "product"
+                    }
+                },
+                {
+                    "start": 911,
+                    "end": 912,
+                    "metadata": {
+
+                    },
+                    "id": "tok145",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 914,
+                    "end": 916,
+                    "metadata": {
+
+                    },
+                    "id": "tok146",
+                    "label": "token",
+                    "features": {
+                        "word": "If"
+                    }
+                },
+                {
+                    "start": 917,
+                    "end": 920,
+                    "metadata": {
+
+                    },
+                    "id": "tok147",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 921,
+                    "end": 927,
+                    "metadata": {
+
+                    },
+                    "id": "tok148",
+                    "label": "token",
+                    "features": {
+                        "word": "reader"
+                    }
+                },
+                {
+                    "start": 928,
+                    "end": 930,
+                    "metadata": {
+
+                    },
+                    "id": "tok149",
+                    "label": "token",
+                    "features": {
+                        "word": "of"
+                    }
+                },
+                {
+                    "start": 931,
+                    "end": 935,
+                    "metadata": {
+
+                    },
+                    "id": "tok150",
+                    "label": "token",
+                    "features": {
+                        "word": "this"
+                    }
+                },
+                {
+                    "start": 936,
+                    "end": 943,
+                    "metadata": {
+
+                    },
+                    "id": "tok151",
+                    "label": "token",
+                    "features": {
+                        "word": "message"
+                    }
+                },
+                {
+                    "start": 944,
+                    "end": 946,
+                    "metadata": {
+
+                    },
+                    "id": "tok152",
+                    "label": "token",
+                    "features": {
+                        "word": "is"
+                    }
+                },
+                {
+                    "start": 947,
+                    "end": 950,
+                    "metadata": {
+
+                    },
+                    "id": "tok153",
+                    "label": "token",
+                    "features": {
+                        "word": "not"
+                    }
+                },
+                {
+                    "start": 951,
+                    "end": 954,
+                    "metadata": {
+
+                    },
+                    "id": "tok154",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 955,
+                    "end": 963,
+                    "metadata": {
+
+                    },
+                    "id": "tok155",
+                    "label": "token",
+                    "features": {
+                        "word": "intended"
+                    }
+                },
+                {
+                    "start": 964,
+                    "end": 973,
+                    "metadata": {
+
+                    },
+                    "id": "tok156",
+                    "label": "token",
+                    "features": {
+                        "word": "recipient"
+                    }
+                },
+                {
+                    "start": 973,
+                    "end": 974,
+                    "metadata": {
+
+                    },
+                    "id": "tok157",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 975,
+                    "end": 978,
+                    "metadata": {
+
+                    },
+                    "id": "tok158",
+                    "label": "token",
+                    "features": {
+                        "word": "you"
+                    }
+                },
+                {
+                    "start": 979,
+                    "end": 982,
+                    "metadata": {
+
+                    },
+                    "id": "tok159",
+                    "label": "token",
+                    "features": {
+                        "word": "are"
+                    }
+                },
+                {
+                    "start": 983,
+                    "end": 992,
+                    "metadata": {
+
+                    },
+                    "id": "tok160",
+                    "label": "token",
+                    "features": {
+                        "word": "requested"
+                    }
+                },
+                {
+                    "start": 993,
+                    "end": 996,
+                    "metadata": {
+
+                    },
+                    "id": "tok161",
+                    "label": "token",
+                    "features": {
+                        "word": "not"
+                    }
+                },
+                {
+                    "start": 997,
+                    "end": 999,
+                    "metadata": {
+
+                    },
+                    "id": "tok162",
+                    "label": "token",
+                    "features": {
+                        "word": "to"
+                    }
+                },
+                {
+                    "start": 1000,
+                    "end": 1004,
+                    "metadata": {
+
+                    },
+                    "id": "tok163",
+                    "label": "token",
+                    "features": {
+                        "word": "read"
+                    }
+                },
+                {
+                    "start": 1004,
+                    "end": 1005,
+                    "metadata": {
+
+                    },
+                    "id": "tok164",
+                    "label": "token",
+                    "features": {
+                        "word": ","
+                    }
+                },
+                {
+                    "start": 1006,
+                    "end": 1010,
+                    "metadata": {
+
+                    },
+                    "id": "tok165",
+                    "label": "token",
+                    "features": {
+                        "word": "copy"
+                    }
+                },
+                {
+                    "start": 1011,
+                    "end": 1013,
+                    "metadata": {
+
+                    },
+                    "id": "tok166",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 1014,
+                    "end": 1024,
+                    "metadata": {
+
+                    },
+                    "id": "tok167",
+                    "label": "token",
+                    "features": {
+                        "word": "distribute"
+                    }
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "metadata": {
+
+                    },
+                    "id": "tok168",
+                    "label": "token",
+                    "features": {
+                        "word": "it"
+                    }
+                },
+                {
+                    "start": 1028,
+                    "end": 1030,
+                    "metadata": {
+
+                    },
+                    "id": "tok169",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 1031,
+                    "end": 1034,
+                    "metadata": {
+
+                    },
+                    "id": "tok170",
+                    "label": "token",
+                    "features": {
+                        "word": "any"
+                    }
+                },
+                {
+                    "start": 1035,
+                    "end": 1037,
+                    "metadata": {
+
+                    },
+                    "id": "tok171",
+                    "label": "token",
+                    "features": {
+                        "word": "of"
+                    }
+                },
+                {
+                    "start": 1038,
+                    "end": 1041,
+                    "metadata": {
+
+                    },
+                    "id": "tok172",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 1042,
+                    "end": 1053,
+                    "metadata": {
+
+                    },
+                    "id": "tok173",
+                    "label": "token",
+                    "features": {
+                        "word": "information"
+                    }
+                },
+                {
+                    "start": 1054,
+                    "end": 1056,
+                    "metadata": {
+
+                    },
+                    "id": "tok174",
+                    "label": "token",
+                    "features": {
+                        "word": "it"
+                    }
+                },
+                {
+                    "start": 1057,
+                    "end": 1065,
+                    "metadata": {
+
+                    },
+                    "id": "tok175",
+                    "label": "token",
+                    "features": {
+                        "word": "contains"
+                    }
+                },
+                {
+                    "start": 1065,
+                    "end": 1066,
+                    "metadata": {
+
+                    },
+                    "id": "tok176",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 1068,
+                    "end": 1074,
+                    "metadata": {
+
+                    },
+                    "id": "tok177",
+                    "label": "token",
+                    "features": {
+                        "word": "Please"
+                    }
+                },
+                {
+                    "start": 1075,
+                    "end": 1081,
+                    "metadata": {
+
+                    },
+                    "id": "tok178",
+                    "label": "token",
+                    "features": {
+                        "word": "delete"
+                    }
+                },
+                {
+                    "start": 1082,
+                    "end": 1084,
+                    "metadata": {
+
+                    },
+                    "id": "tok179",
+                    "label": "token",
+                    "features": {
+                        "word": "it"
+                    }
+                },
+                {
+                    "start": 1085,
+                    "end": 1096,
+                    "metadata": {
+
+                    },
+                    "id": "tok180",
+                    "label": "token",
+                    "features": {
+                        "word": "immediately"
+                    }
+                },
+                {
+                    "start": 1097,
+                    "end": 1100,
+                    "metadata": {
+
+                    },
+                    "id": "tok181",
+                    "label": "token",
+                    "features": {
+                        "word": "and"
+                    }
+                },
+                {
+                    "start": 1101,
+                    "end": 1107,
+                    "metadata": {
+
+                    },
+                    "id": "tok182",
+                    "label": "token",
+                    "features": {
+                        "word": "notify"
+                    }
+                },
+                {
+                    "start": 1108,
+                    "end": 1111,
+                    "metadata": {
+
+                    },
+                    "id": "tok183",
+                    "label": "token",
+                    "features": {
+                        "word": "the"
+                    }
+                },
+                {
+                    "start": 1112,
+                    "end": 1118,
+                    "metadata": {
+
+                    },
+                    "id": "tok184",
+                    "label": "token",
+                    "features": {
+                        "word": "sender"
+                    }
+                },
+                {
+                    "start": 1119,
+                    "end": 1121,
+                    "metadata": {
+
+                    },
+                    "id": "tok185",
+                    "label": "token",
+                    "features": {
+                        "word": "by"
+                    }
+                },
+                {
+                    "start": 1122,
+                    "end": 1128,
+                    "metadata": {
+
+                    },
+                    "id": "tok186",
+                    "label": "token",
+                    "features": {
+                        "word": "return"
+                    }
+                },
+                {
+                    "start": 1129,
+                    "end": 1134,
+                    "metadata": {
+
+                    },
+                    "id": "tok187",
+                    "label": "token",
+                    "features": {
+                        "word": "email"
+                    }
+                },
+                {
+                    "start": 1135,
+                    "end": 1137,
+                    "metadata": {
+
+                    },
+                    "id": "tok188",
+                    "label": "token",
+                    "features": {
+                        "word": "or"
+                    }
+                },
+                {
+                    "start": 1138,
+                    "end": 1140,
+                    "metadata": {
+
+                    },
+                    "id": "tok189",
+                    "label": "token",
+                    "features": {
+                        "word": "by"
+                    }
+                },
+                {
+                    "start": 1141,
+                    "end": 1150,
+                    "metadata": {
+
+                    },
+                    "id": "tok190",
+                    "label": "token",
+                    "features": {
+                        "word": "telephone"
+                    }
+                },
+                {
+                    "start": 1150,
+                    "end": 1151,
+                    "metadata": {
+
+                    },
+                    "id": "tok191",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 1153,
+                    "end": 1158,
+                    "metadata": {
+
+                    },
+                    "id": "tok192",
+                    "label": "token",
+                    "features": {
+                        "word": "Thank"
+                    }
+                },
+                {
+                    "start": 1159,
+                    "end": 1162,
+                    "metadata": {
+
+                    },
+                    "id": "tok193",
+                    "label": "token",
+                    "features": {
+                        "word": "you"
+                    }
+                },
+                {
+                    "start": 1162,
+                    "end": 1163,
+                    "metadata": {
+
+                    },
+                    "id": "tok194",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 1166,
+                    "end": 1167,
+                    "metadata": {
+
+                    },
+                    "id": "tok195",
+                    "label": "token",
+                    "features": {
+                        "word": "-"
+                    }
+                },
+                {
+                    "start": 1168,
+                    "end": 1176,
+                    "metadata": {
+
+                    },
+                    "id": "tok196",
+                    "label": "token",
+                    "features": {
+                        "word": "107177_1"
+                    }
+                },
+                {
+                    "start": 1176,
+                    "end": 1177,
+                    "metadata": {
+
+                    },
+                    "id": "tok197",
+                    "label": "token",
+                    "features": {
+                        "word": "."
+                    }
+                },
+                {
+                    "start": 1177,
+                    "end": 1180,
+                    "metadata": {
+
+                    },
+                    "id": "tok198",
+                    "label": "token",
+                    "features": {
+                        "word": "DOC"
+                    }
+                }
+            ]
+        },
+        {
+            "metadata": {
+                "producedBy": "org.anc.lapps.stanford.SentenceSplitter:1.3.0",
+                "contains": "sentence"
+            },
+            "annotations": [
+                {
+                    "start": 3,
+                    "end": 395,
+                    "metadata": {
+
+                    },
+                    "id": "s0",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 397,
+                    "end": 486,
+                    "metadata": {
+
+                    },
+                    "id": "s1",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 488,
+                    "end": 598,
+                    "metadata": {
+
+                    },
+                    "id": "s2",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 600,
+                    "end": 610,
+                    "metadata": {
+
+                    },
+                    "id": "s3",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 612,
+                    "end": 814,
+                    "metadata": {
+
+                    },
+                    "id": "s4",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 816,
+                    "end": 912,
+                    "metadata": {
+
+                    },
+                    "id": "s5",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 914,
+                    "end": 1066,
+                    "metadata": {
+
+                    },
+                    "id": "s6",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 1068,
+                    "end": 1151,
+                    "metadata": {
+
+                    },
+                    "id": "s7",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 1153,
+                    "end": 1163,
+                    "metadata": {
+
+                    },
+                    "id": "s8",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 1166,
+                    "end": 1177,
+                    "metadata": {
+
+                    },
+                    "id": "s9",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                },
+                {
+                    "start": 1177,
+                    "end": 1180,
+                    "metadata": {
+
+                    },
+                    "id": "s10",
+                    "label": "sentence",
+                    "features": {
+
+                    }
+                }
+            ]
+        }
+    ],
+    "metadata": {
+
+    },
+    "text": "\n\n\nMessage-ID: <3024882.1075852475408.JavaMail.evans@thyme>\nDate: Sat, 25 Aug 2001 18:17:17 -0700 (PDT)\nFrom: cfr@vnf.com\nTo: linda.robertson@enron.com\nSubject: PRIVILEGED AND CONFIDENTIAL - Christopher Stelzer Draft\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\n\n\nAttached is the draft testimony of Christopher Stelzer, on behalf of Avista Energy.\n\nIf possible, we would appreciate comments no later than 3:00 PM EST on Sunday, August 26.  Comments can be faxed to my attention at 202/338-2416 or emailed to cfr@vnf.com or gdb@vnf.com (Gary Bachman).\n\nThank you.\n\nCheryl Feik Ryan\nVan Ness Feldman, P.C.\n1050 Thomas Jefferson Street NW\nWashington DC 20007\n202/298-1845\ncfr@vnf.com\n\nThis email message is intended solely for the individual or individuals named above.  It may contain confidential attorney-client privileged information and/or attorney work product.  If the reader of this message is not the intended recipient, you are requested not to read, copy or distribute it or any of the information it contains.  Please delete it immediately and notify the sender by return email or by telephone.  Thank you.\n\n - 107177_1.DOC \n\n\n",
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "text": "http://vocab.lappsgrid.org/jsonld/container/text",
+        "metadata": {
+            "@id": "http://vocab.lappsgrid.org/jsonld/container/metadata",
+            "@container": "@index"
+        },
+        "steps": {
+            "@id": "http://vocab.lappsgrid.org/jsonld/container/steps",
+            "@container": "@list"
+        }
+    },
+    "@id": "http://vocab.lappsgrid.org/jsonld/container"
+}
