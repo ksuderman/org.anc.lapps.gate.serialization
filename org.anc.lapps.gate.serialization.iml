@@ -15,7 +15,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.lappsgrid:vocabulary:0.9.4" level="project" />
-    <orderEntry type="module" module-name="org.anc.lapps.serialization" />
+    <orderEntry type="library" name="Maven: org.anc.lapps:serialization:0.12.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsonld-java:jsonld-java:0.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.1" level="project" />
