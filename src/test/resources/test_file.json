@@ -2,8 +2,12 @@
     "steps": [
         {
             "metadata": {
-                "producedBy": "org.anc.lapps.stanford.SATokenizer:1.3.0",
-                "contains": "token"
+                "contains":  {
+                    "token": {
+                        "producer":"org.anc.lapps.stanford.SATokenizer:1.3.0",
+                        "type": "tokenization:gate"
+                    }
+                }
             },
             "annotations": [
                 {
@@ -2398,8 +2402,12 @@
         },
         {
             "metadata": {
-                "producedBy": "org.anc.lapps.stanford.SentenceSplitter:1.3.0",
-                "contains": "sentence"
+                "contains": {
+                    "sentence": {
+                        "producer":"org.anc.lapps.stanford.SentenceSplitter:1.3.0",
+                        "type":"chunk:stanford"
+                    }
+                }
             },
             "annotations": [
                 {
@@ -2540,18 +2548,9 @@
     "metadata": {
 
     },
-    "text": "\n\n\nMessage-ID: <3024882.1075852475408.JavaMail.evans@thyme>\nDate: Sat, 25 Aug 2001 18:17:17 -0700 (PDT)\nFrom: cfr@vnf.com\nTo: linda.robertson@enron.com\nSubject: PRIVILEGED AND CONFIDENTIAL - Christopher Stelzer Draft\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\n\n\nAttached is the draft testimony of Christopher Stelzer, on behalf of Avista Energy.\n\nIf possible, we would appreciate comments no later than 3:00 PM EST on Sunday, August 26.  Comments can be faxed to my attention at 202/338-2416 or emailed to cfr@vnf.com or gdb@vnf.com (Gary Bachman).\n\nThank you.\n\nCheryl Feik Ryan\nVan Ness Feldman, P.C.\n1050 Thomas Jefferson Street NW\nWashington DC 20007\n202/298-1845\ncfr@vnf.com\n\nThis email message is intended solely for the individual or individuals named above.  It may contain confidential attorney-client privileged information and/or attorney work product.  If the reader of this message is not the intended recipient, you are requested not to read, copy or distribute it or any of the information it contains.  Please delete it immediately and notify the sender by return email or by telephone.  Thank you.\n\n - 107177_1.DOC \n\n\n",
-    "@context": {
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "text": "http://vocab.lappsgrid.org/jsonld/container/text",
-        "metadata": {
-            "@id": "http://vocab.lappsgrid.org/jsonld/container/metadata",
-            "@container": "@index"
-        },
-        "steps": {
-            "@id": "http://vocab.lappsgrid.org/jsonld/container/steps",
-            "@container": "@list"
-        }
+    "text": {
+        "@value":"\n\n\nMessage-ID: <3024882.1075852475408.JavaMail.evans@thyme>\nDate: Sat, 25 Aug 2001 18:17:17 -0700 (PDT)\nFrom: cfr@vnf.com\nTo: linda.robertson@enron.com\nSubject: PRIVILEGED AND CONFIDENTIAL - Christopher Stelzer Draft\nMime-Version: 1.0\nContent-Type: text/plain; charset=us-ascii\nContent-Transfer-Encoding: 7bit\n\n\nAttached is the draft testimony of Christopher Stelzer, on behalf of Avista Energy.\n\nIf possible, we would appreciate comments no later than 3:00 PM EST on Sunday, August 26.  Comments can be faxed to my attention at 202/338-2416 or emailed to cfr@vnf.com or gdb@vnf.com (Gary Bachman).\n\nThank you.\n\nCheryl Feik Ryan\nVan Ness Feldman, P.C.\n1050 Thomas Jefferson Street NW\nWashington DC 20007\n202/298-1845\ncfr@vnf.com\n\nThis email message is intended solely for the individual or individuals named above.  It may contain confidential attorney-client privileged information and/or attorney work product.  If the reader of this message is not the intended recipient, you are requested not to read, copy or distribute it or any of the information it contains.  Please delete it immediately and notify the sender by return email or by telephone.  Thank you.\n\n - 107177_1.DOC \n\n\n",
+        "@language":"en"
     },
-    "@id": "http://vocab.lappsgrid.org/jsonld/container"
+    "@context": "http://vocab.lappsgrid.org/context.json.ld"
 }
