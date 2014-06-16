@@ -14,7 +14,9 @@ class FeatureMapper {
     Map map = [:]
 
     public FeatureMapper() {
+        println "Constructing a FeatureMapper."
         FEATURES.each { name, value ->
+            println "Initializing ${name} = ${value}"
             map[name] = value
             map[value] = name
         }
