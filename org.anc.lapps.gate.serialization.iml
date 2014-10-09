@@ -17,7 +17,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.lappsgrid:vocabulary:1.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.lappsgrid.experimental:serialization:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.lappsgrid:serialization:2.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ivy:ivy:2.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.1" level="project" />
