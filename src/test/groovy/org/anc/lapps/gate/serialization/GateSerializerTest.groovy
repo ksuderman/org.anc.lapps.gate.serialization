@@ -7,6 +7,8 @@ import org.anc.util.Counter
 //import org.lappsgrid.discriminator.Types
 
 import org.junit.*
+import org.lappsgrid.serialization.Container
+import org.lappsgrid.serialization.View
 
 import static org.junit.Assert.*
 
@@ -80,8 +82,8 @@ public class GateSerializerTest {
             increment(documentMap, it.next().type)
         }
 
-        container.steps.each { ProcessingStep step ->
-            step.annotations.each { annotation ->
+        container.views.each { View view ->
+            view.annotations.each { annotation ->
                 increment(containerMap, annotation.label)
             }
         }

@@ -6,27 +6,19 @@ import org.lappsgrid.vocabulary.Features
  * @author Keith Suderman
  */
 class FeatureMapper {
-    private static final Map FEATURES = [
-            'category':Features.PART_OF_SPEECH,
-            'base':Features.LEMMA
+
+    Map<String,String> map = [
+            "category":"pos",
+            "pos":"category",
+            "string":"word",
+            "word":"string"
     ]
 
-    Map map = [:]
-
-    public FeatureMapper() {
-        println "Constructing a FeatureMapper."
-        FEATURES.each { name, value ->
-            println "Initializing ${name} = ${value}"
-            map[name] = value
-            map[value] = name
+    String get(String name) {
+        String mapped = map[name]
+        if (mapped) {
+            return mapped
         }
+        return name
     }
-
-    String get(String key) {
-        return map[key] ?: key
-    }
-
-//    String getAt(String key) {
-//        return get(key)
-//    }
 }
