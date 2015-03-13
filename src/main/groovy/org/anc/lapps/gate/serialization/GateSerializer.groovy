@@ -4,58 +4,65 @@ import gate.AnnotationSet
 import gate.Document
 import gate.FeatureMap
 import gate.util.InvalidOffsetException
-import org.anc.lapps.serialization.Annotation
-import org.anc.lapps.serialization.Container
-import org.anc.lapps.serialization.ProcessingStep
+import org.lappsgrid.serialization.Data;
+import org.lappsgrid.serialization.lif.Annotation
+import org.lappsgrid.serialization.lif.Container
+import org.lappsgrid.serialization.lif.View
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import static org.lappsgrid.discriminator.Discriminators.Uri
 
 /**
  * @author Keith Suderman
  */
 class GateSerializer {
-//    private static Logger logger = LoggerFactory.getLogger(GateSerializer.class)
+    private static Logger logger = LoggerFactory.getLogger(GateSerializer.class)
 
-//    static AnnotationMapper annotationMapper = new AnnotationMapper()
-//    static FeatureMapper featureMapper = new FeatureMapper()
+    static AnnotationMapper annotationMapper = new AnnotationMapper()
+    static FeatureMapper featureMapper = new FeatureMapper()
 
     static public String toJson(Document document) {
-        //logger.debug("Generating JSON")
-        return convertToContainer(document).toJson()
+        logger.debug("Generating JSON")
+        Container container = convertToContainer(document)
+        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        return data.asJson();
     }
 
     static public String toPrettyJson(Document document) {
-        //logger.debug("Generating pretty JSON")
-        return convertToContainer(document).toPrettyJson()
+        logger.debug("Generating pretty JSON")
+        Container container = convertToContainer(document)
+        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        return data.asPrettyJson();
     }
 
     static public Container convertToContainer(Document document) {
-        //logger.debug("Creating container.")
-        Container container = new Container(false)
+        logger.debug("Creating container.")
+        Container container = new Container()
         container.text = document.content.getContent(0, document.content.size())
         addToContainer(container, document)
-        //logger.debug("Container created with {} steps", container.steps.size())
+        logger.debug("Container created with {} views", container.views.size())
         return container
     }
 
     static public void addToContainer(Container container, Document document) {
-        int counter = -1
-        ProcessingStep step = new ProcessingStep()
-        AnnotationSet aSet = document.getAnnotations()
-        counter = addAnnotationSet(aSet, step, counter)
-        document.namedAnnotationSets.each { name, set ->
-            //logger.debug("Processing annotation set {}", name)
-            counter = addAnnotationSet(set, step, counter)
+
+        View step = new View()
+        AnnotationSet set = document.getAnnotations()
+        addAnnotationSet(set, step)
+        document.namedAnnotationSets.each { name, aset ->
+            logger.debug("Processing annotation set {}", name)
+            addAnnotationSet(aset, step)
         }
 
         // TODO Need to filter out the document features added by GATE from the
         // features we are interested in.
-        //logger.debug("Processing document features.")
+        logger.debug("Processing document features.")
         FeatureMap features = document.getFeatures()
         if (features) {
-            //logger.trace("There are {} document features.", features.size())
+            logger.trace("There are {} document features.", features.size())
             features.each { key, value ->
-                //logger.trace("Feature {} = \"{}\"", key, value)
+                logger.trace("Feature {} = \"{}\"", key, value)
                 if (key.startsWith("lapps:") && value instanceof String) try {
                     key = key[6..-1]
                     String[] parts = value.split(' ')
@@ -69,35 +76,35 @@ class GateSerializer {
                     }
                 }
                 catch (Throwable e) {
-                    //logger.error("Unable to save document feature.", e)
+                    logger.error("Unable to save document feature.", e)
                 }
             }
         }
-        container.steps << step
+        container.views << step
         //logger.debug("Document added to container.")
     }
 
-    private static int addAnnotationSet(AnnotationSet set, ProcessingStep step, int counter) {
+    private static void addAnnotationSet(AnnotationSet set, View view) {
         set.each { gateAnnotation ->
             Annotation annotation = new Annotation()
-            annotation.metadata.aSet = set.getName()
-            annotation.metadata.gateId = gateAnnotation.getId()
-            annotation.id = "${++counter}"
-            ++counter
+            String setName = set.getName()
+            if (setName != null) {
+                annotation.metadata['gate:set'] = setName
+            }
+            annotation.id = gateAnnotation.getId()
             annotation.start = gateAnnotation.startNode.offset.longValue()
             annotation.end = gateAnnotation.endNode.offset.longValue()
             //TODO map annotation names.
 //            annotation.label = annotationMapper.get(gateAnnotation.type)
             annotation.label = gateAnnotation.type
+            annotation.type = annotationMapper.get(gateAnnotation.type)
             gateAnnotation.features.each { key, value ->
-                // TODO map feature names
-//                def mappedKey = featureMapper.get(key)
-//                annotation.features[mappedKey] = value
-                annotation.features[key] = value
+                def mappedKey = featureMapper.get(key)
+                annotation.features[mappedKey] = value
+//                annotation.features[key] = value
             }
-            step.annotations << annotation
+            view.annotations << annotation
         }
-        return counter
     }
 
     static public Document convertToDocument(Container container) {
@@ -108,7 +115,7 @@ class GateSerializer {
 
         List list = []
         int i = 0
-        container.steps.each { step ->
+        container.views.each { step ->
             //logger.debug("Processing step ${++i}.")
             Map map = step.metadata.contains
             if (map) {
@@ -131,8 +138,8 @@ class GateSerializer {
                 FeatureMap features = gate.Factory.newFeatureMap()
                 annotation.features.each { name, value ->
                     // TODO map feature names
-//                    features.put(featureMapper.get(name), value)
-                    features.put(name, value)
+                    features.put(featureMapper.get(name), value)
+//                    features.put(name, value)
                 }
                 try {
                     if (id > 0) {
