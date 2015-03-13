@@ -7,6 +7,9 @@ import org.anc.util.Counter
 //import org.lappsgrid.discriminator.Types
 
 import org.junit.*
+import org.lappsgrid.serialization.Serializer
+import org.lappsgrid.serialization.lif.Container
+import org.lappsgrid.serialization.lif.View
 
 import static org.junit.Assert.*
 
@@ -36,7 +39,7 @@ public class GateSerializerTest {
         //setup()
         Document document = getDocument() //Factory.newDocument(new File('org.anc.lapps.serialization.gate/src/test/resources/test-file.xml').toURI().toURL())
         Container container = GateSerializer.convertToContainer(document)
-        println container.toJson()
+        println Serializer.toPrettyJson(container)
     }
 
     @Ignore
@@ -62,7 +65,7 @@ public class GateSerializerTest {
     void jsonToGateTest() {
         String json = ResourceLoader.loadString('test_file.json')
         assertTrue(json != null)
-        Container container = new Container(json)
+        Container container = Serializer.parse(json, Container)
         assertNotNull(container.text)
         //println container.toPrettyJson()
         Document document = GateSerializer.convertToDocument(container)
@@ -80,8 +83,8 @@ public class GateSerializerTest {
             increment(documentMap, it.next().type)
         }
 
-        container.steps.each { ProcessingStep step ->
-            step.annotations.each { annotation ->
+        container.views.each { View view ->
+            view.annotations.each { annotation ->
                 increment(containerMap, annotation.label)
             }
         }
