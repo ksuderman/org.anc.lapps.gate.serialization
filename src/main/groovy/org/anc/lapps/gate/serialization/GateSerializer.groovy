@@ -4,11 +4,14 @@ import gate.AnnotationSet
 import gate.Document
 import gate.FeatureMap
 import gate.util.InvalidOffsetException
-import org.lappsgrid.serialization.Annotation
-import org.lappsgrid.serialization.Container
-import org.lappsgrid.serialization.View
+import org.lappsgrid.serialization.Data;
+import org.lappsgrid.serialization.lif.Annotation
+import org.lappsgrid.serialization.lif.Container
+import org.lappsgrid.serialization.lif.View
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import static org.lappsgrid.discriminator.Discriminators.Uri
 
 /**
  * @author Keith Suderman
@@ -16,25 +19,29 @@ import org.slf4j.LoggerFactory
 class GateSerializer {
     private static Logger logger = LoggerFactory.getLogger(GateSerializer.class)
 
-//    static AnnotationMapper annotationMapper = new AnnotationMapper()
+    static AnnotationMapper annotationMapper = new AnnotationMapper()
     static FeatureMapper featureMapper = new FeatureMapper()
 
     static public String toJson(Document document) {
         logger.debug("Generating JSON")
-        return convertToContainer(document).toJson()
+        Container container = convertToContainer(document)
+        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        return data.asJson();
     }
 
     static public String toPrettyJson(Document document) {
         logger.debug("Generating pretty JSON")
-        return convertToContainer(document).toPrettyJson()
+        Container container = convertToContainer(document)
+        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        return data.asPrettyJson();
     }
 
     static public Container convertToContainer(Document document) {
         logger.debug("Creating container.")
-        Container container = new Container(false)
+        Container container = new Container()
         container.text = document.content.getContent(0, document.content.size())
         addToContainer(container, document)
-        logger.debug("Container created with {} steps", container.steps.size())
+        logger.debug("Container created with {} views", container.views.size())
         return container
     }
 
@@ -73,11 +80,11 @@ class GateSerializer {
                 }
             }
         }
-        container.steps << step
+        container.views << step
         //logger.debug("Document added to container.")
     }
 
-    private static void addAnnotationSet(AnnotationSet set, View step) {
+    private static void addAnnotationSet(AnnotationSet set, View view) {
         set.each { gateAnnotation ->
             Annotation annotation = new Annotation()
             String setName = set.getName()
@@ -90,12 +97,13 @@ class GateSerializer {
             //TODO map annotation names.
 //            annotation.label = annotationMapper.get(gateAnnotation.type)
             annotation.label = gateAnnotation.type
+            annotation.type = annotationMapper.get(gateAnnotation.type)
             gateAnnotation.features.each { key, value ->
                 def mappedKey = featureMapper.get(key)
                 annotation.features[mappedKey] = value
 //                annotation.features[key] = value
             }
-            step.annotations << annotation
+            view.annotations << annotation
         }
     }
 
