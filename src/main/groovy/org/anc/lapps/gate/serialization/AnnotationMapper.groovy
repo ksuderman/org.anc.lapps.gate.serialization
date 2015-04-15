@@ -12,7 +12,14 @@ import static org.lappsgrid.discriminator.Discriminators.Uri
 class AnnotationMapper { //extends HashMap {
     static final Map MAP = [
             'Token':Uri.TOKEN,
-            'Sentence':Uri.SENTENCE
+            'Sentence':Uri.SENTENCE,
+            'Paragraph':Uri.PARAGRAPH,
+            'Person':Uri.PERSON,
+            'Date':Uri.DATE,
+            'Location':Uri.LOCATION,
+            'Organization':Uri.ORGANIZATION,
+            'NounChunk':Uri.NCHUNK,
+            'VerbChunk':Uri.VCHUNK
     ]
 
     Map map = [:]

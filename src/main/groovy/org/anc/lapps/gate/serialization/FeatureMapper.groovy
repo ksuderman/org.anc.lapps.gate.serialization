@@ -11,7 +11,9 @@ class FeatureMapper {
             "category":"pos",
             "pos":"category",
             "string":"word",
-            "word":"string"
+            "word":"string",
+            "kind":"tokenType",
+            "tokenType":"kind"
     ]
 
     String get(String name) {
