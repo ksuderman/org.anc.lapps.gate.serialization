@@ -65,6 +65,7 @@ class GateSerializer {
                 logger.trace("Feature {} = \"{}\"", key, value)
                 if (key.startsWith("lapps:") && value instanceof String) try {
                     key = key[6..-1]
+                    logger.debug "Key is {}", key
                     String[] parts = value.split(' ')
                     if (parts.size() == 3) {
                         // TODO the stepNumber should be used to order the processing
@@ -96,8 +97,8 @@ class GateSerializer {
             annotation.end = gateAnnotation.endNode.offset.longValue()
             //TODO map annotation names.
 //            annotation.label = annotationMapper.get(gateAnnotation.type)
-            annotation.label = gateAnnotation.type
-            annotation.type = annotationMapper.get(gateAnnotation.type)
+//            annotation.type = gateAnnotation.type
+            annotation.label = annotationMapper.get(gateAnnotation.type)
             gateAnnotation.features.each { key, value ->
                 def mappedKey = featureMapper.get(key)
                 annotation.features[mappedKey] = value
@@ -159,7 +160,7 @@ class GateSerializer {
         list.each { data ->
             data.map.each { key,contains->
                 String feature = "${data.step} ${contains.producer} ${contains.type}"
-                features.put("lapps:${key}", feature)
+                features.put("lapps:${key}".toString(), feature)
             }
         }
         return document
