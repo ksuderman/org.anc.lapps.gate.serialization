@@ -7,6 +7,7 @@ import org.anc.util.Counter
 //import org.lappsgrid.discriminator.Types
 
 import org.junit.*
+import org.lappsgrid.discriminator.Discriminators
 import org.lappsgrid.serialization.Serializer
 import org.lappsgrid.serialization.lif.Container
 import org.lappsgrid.serialization.lif.View
@@ -59,6 +60,19 @@ public class GateSerializerTest {
             map[key] = count
         }
         count.increment()
+    }
+
+    @Test
+    void jsonToGateTokenTest() {
+        Container container = new Container()
+        container.text = "hello world"
+        container.language = "en-US"
+        View view = container.newView()
+        view.newAnnotation("w1", Discriminators.Uri.TOKEN, 0, 5)
+        view.newAnnotation("w2", Discriminators.Uri.TOKEN, 6, 11)
+
+        Document document = GateSerializer.convertToDocument(container)
+        println document.toXml()
     }
 
     @Test
