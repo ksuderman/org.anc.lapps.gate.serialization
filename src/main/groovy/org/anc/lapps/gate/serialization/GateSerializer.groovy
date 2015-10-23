@@ -25,14 +25,14 @@ class GateSerializer {
     static public String toJson(Document document) {
         logger.debug("Generating JSON")
         Container container = convertToContainer(document)
-        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        Data<Container> data = new Data<>(Uri.LAPPS, container)
         return data.asJson();
     }
 
     static public String toPrettyJson(Document document) {
         logger.debug("Generating pretty JSON")
         Container container = convertToContainer(document)
-        Data<Container> data = new Data<>(Uri.JSON_LD, container)
+        Data<Container> data = new Data<>(Uri.LAPPS, container)
         return data.asPrettyJson();
     }
 
@@ -133,8 +133,8 @@ class GateSerializer {
                 Long start = annotation.start
                 Long end = annotation.end
                 // TODO map annotation names
-                String label = annotation.label
-//                String label = annotationMapper.get(annotation.label) ?: annotation.label
+//                String label = annotation.label
+                String label = annotationMapper.get(annotation.label) ?: annotation.label
                 //println "${start}-${end} ${label}"
 //                println "${annotation.label} -> ${label}"
                 FeatureMap features = gate.Factory.newFeatureMap()
