@@ -4,3 +4,6 @@ pom.xml.releaseBackup
 pom.xml.next
 release.properties
 *.iml
+*.ipr
+*.iws
+ß
