@@ -87,7 +87,7 @@ class GateSerializer {
 
     private static void addAnnotationSet(AnnotationSet set, View view) {
         set.each { gateAnnotation ->
-            Annotation annotation = new Annotation()
+            Annotation annotation = annotationMapper.create(gateAnnotation.type)
             String setName = set.getName()
             if (setName != null) {
                 annotation.metadata['gate:set'] = setName
@@ -95,15 +95,10 @@ class GateSerializer {
             annotation.id = gateAnnotation.getId()
             annotation.start = gateAnnotation.startNode.offset.longValue()
             annotation.end = gateAnnotation.endNode.offset.longValue()
-            //TODO map annotation names.
-//            annotation.label = annotationMapper.get(gateAnnotation.type)
-//            annotation.type = gateAnnotation.type
             annotation.label = gateAnnotation.type
-            annotation.atType = annotationMapper.get(gateAnnotation.type)
             gateAnnotation.features.each { key, value ->
                 def mappedKey = featureMapper.get(key)
                 annotation.features[mappedKey] = value
-//                annotation.features[key] = value
             }
             view.annotations << annotation
         }
@@ -134,10 +129,8 @@ class GateSerializer {
                 Long end = annotation.end
                 // TODO map annotation names
 //                String label = annotation.label
-                String key = annotation.atType ?: annotation.label
-                String label = annotationMapper.get(key)
-                //println "${start}-${end} ${label}"
-//                println "${annotation.label} -> ${label}"
+//                String key = annotation.atType ?: annotation.label
+                String label = annotationMapper.get(annotation)
                 FeatureMap features = gate.Factory.newFeatureMap()
                 annotation.features.each { name, value ->
                     // TODO map feature names

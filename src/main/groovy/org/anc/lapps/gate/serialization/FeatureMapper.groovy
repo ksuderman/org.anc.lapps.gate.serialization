@@ -10,10 +10,15 @@ class FeatureMapper {
     Map<String,String> map = [
             "category":"pos",
             "pos":"category",
+
             "string":"word",
             "word":"string",
+
             "kind":"tokenType",
-            "tokenType":"kind"
+            "tokenType":"kind",
+
+            "base":"lemma",
+            "lemma":"base"
     ]
 
     String get(String name) {
