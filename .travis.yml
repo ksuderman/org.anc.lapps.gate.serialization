@@ -1,0 +1,11 @@
+language: java
+branches:
+  only:
+  - master
+  - develop
+before_install:
+- chmod a+x ./deploy.sh
+script:
+- mvn clean test --settings settings.xml
+after_success:
+- if [ "$TRAVIS_BRANCH" == "master" ] ; then ./deploy.sh ; fi
