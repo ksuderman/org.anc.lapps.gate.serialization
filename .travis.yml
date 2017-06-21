@@ -3,6 +3,14 @@ branches:
   only:
   - master
   - develop
+env:
+  global:
+  - secure: SaoHmhC1zJgpk5GNXHYAcw3jRfyOc4U1MUf4gI1CHAFq4oarM9BHnBehpN0Izhwth3ukSatL0ES6CdZRbJ8Ijn+nN+BMGW3ZpJQQA3Onur817Op8eg/BX4Vsk/kDO98IRVH6nWKELbW1M3IjZL1b5sHgsjzmgf4oGgQ9l47SB6o=
+  - secure: WQUCij4/Wz3rkpvD1gNpFwJxakMxal5pPGV7wL8BPe5gA9KbQNE8sLj+PlW6OjiSK5tINrTUH5Xva1sIgjkM6VSawuBKZ/gSVESMQKFqcklJQ14D1yTYdbs1Z/wEX2c/Gz2a9Yjn481Q72XM7lBpP6zYDjsgTe52AQxPPVL0Fl0=
+  - secure: WuDHXQVAYaraEKEaSC7ORjTqnqo2Zi4IhoyiMEiZ/e7EDF21Kezf64F66FACpb0CQrcSjDaR2ZneOChLzMRYVlyESkqOtO1ai4YoXTq9072tl2YaynIVWU1sgJ94xMJD+AjNI4OwQGHoeeVirHivZ9msD9zAvjiFUiN8WDd7ng4=
+  - secure: SI3cgWV7L8pw9e6MNxnFVlktd9rMVuVAQnGqOvmXdk9WT7TQ7nlt7HD0BaDSH4cr1Y1ccJ1XuTWZmolzubLk0G7WeYu090MFd8IpfTPSenpMYZ71wis+xmOyhfxVYXgZA/nqKCFCU5ldpbokIBm9A7DDOmr8H7MYrUKZAUrN8pQ=
+  - secure: FpLQHyXPBe1PnKICiMUcq1zqbDnCD8y6Z3c2eikPcAWmUl+JfTF+S8X4y/jwrex8KPacoHUifwmK2b9C9pefz0OjF2MvzSvtIOi7HMJ8BaEDg+c4aqHarQL06bHwOfEUnzEa7AtLcAx1ZnK2diCC9zimt6OqDpKR9lv9xCN9hx4=
+  - secure: DocClxum8FH6oeHKOplSMWRsZ5/Juew6XGFFXiaxdt3Ica3QUEnQAlGD59qeWlc8DI1cb64mmAoB66bLavlCAtoRzoIJC7GSiV8KnWzA/D8Y1KuUvjfwA8E+xFMpH2rqKCDuY2MMrBXeRjGGo6hv+9xope4jmDPxmRgTrio2ymg=
 before_install:
 - chmod a+x ./deploy.sh
 script:
