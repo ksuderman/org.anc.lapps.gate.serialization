@@ -31,8 +31,8 @@
     </issueManagement>
     <properties>
         <gate.version>8.1</gate.version>
-        <lapps.vocabulary.version>2.3.1</lapps.vocabulary.version>
-        <lapps.serialization.verions>2.4.0</lapps.serialization.verions>
+        <lapps.vocabulary.version>2.3.2</lapps.vocabulary.version>
+        <lapps.serialization.verions>2.5.0</lapps.serialization.verions>
         <anc.common.version>3.6.0</anc.common.version>
     </properties>
     <dependencies>
