@@ -7,6 +7,7 @@ import org.anc.util.Counter
 //import org.lappsgrid.discriminator.Types
 
 import org.junit.*
+import org.lappsgrid.serialization.Data
 import org.lappsgrid.serialization.DataContainer
 
 import static org.lappsgrid.discriminator.Discriminators.*
@@ -64,6 +65,17 @@ public class GateSerializerTest {
             map[key] = count
         }
         count.increment()
+    }
+
+    @Test
+    void testBionlpData() {
+        InputStream stream = this.class.getResourceAsStream('/example-npe.lif')
+        assert null != stream
+        Data data = Serializer.parse(stream.text)
+        Container container = new Container((Map)data.payload)
+        Document document = GateSerializer.convertToDocument(container)
+        assert null != document
+
     }
 
     @Test

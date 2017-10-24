@@ -1,6 +1,6 @@
 package org.anc.lapps.gate.serialization
 
-import org.lappsgrid.vocabulary.Features
+//import org.lappsgrid.vocabulary.Features
 
 /**
  * @author Keith Suderman

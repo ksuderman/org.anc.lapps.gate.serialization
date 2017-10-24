@@ -119,12 +119,12 @@ class GateSerializer {
                 list << new ListData(map:map, step:i);
             }
             step.annotations.each { annotation ->
-                String setName = annotation.metadata.aSet ?: ''
+                String setName = annotation.metadata?.aSet ?: ''
                 AnnotationSet annotationSet = document.getAnnotations(setName)
                 if (annotationSet == null) {
                     annotationSet = document.getAnnotations()
                 }
-                Integer id = annotation.metadata.gateId ?: -1
+                Integer id = annotation.metadata?.gateId ?: -1
                 Long start = annotation.start
                 Long end = annotation.end
                 // TODO map annotation names
