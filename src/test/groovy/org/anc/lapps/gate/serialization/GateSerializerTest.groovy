@@ -67,8 +67,9 @@ public class GateSerializerTest {
         count.increment()
     }
 
-    @Test
+    @Ignore
     void testBionlpData() {
+        // This is not a valid test document.
         InputStream stream = this.class.getResourceAsStream('/example-npe.lif')
         assert null != stream
         Data data = Serializer.parse(stream.text)
