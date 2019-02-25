@@ -18,7 +18,7 @@ class FeatureMapperSpec extends Specification {
         where:
         a           | b
         'category'  | 'pos'
-        'base'      | 'lemma'
+        'root'      | 'lemma'
         'string'    | 'word'
         'kind'      | 'tokenType'
         'length'    | 'length'

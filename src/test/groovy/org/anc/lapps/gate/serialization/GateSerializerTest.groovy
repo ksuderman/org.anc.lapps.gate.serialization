@@ -116,6 +116,19 @@ public class GateSerializerTest {
         assert 11 == a.end
     }
 
+    @Test
+    void testLemmaConversion() {
+        URL url = this.class.getResource("/morphological.xml")
+        assert url != null
+        Document document = Factory.newDocument(url);
+        Container container = GateSerializer.convertToContainer(document);
+        println Serializer.toPrettyJson(container)
+
+        assert 1 == container.views.size()
+        List<View> views = container.findViewsThatContain(Uri.LEMMA)
+        assert 1 == views.size()
+    }
+
     @Ignore
     void jsonToGateTest() {
         String json = ResourceLoader.loadString('gate-document.lif')

@@ -17,8 +17,8 @@ class FeatureMapper {
             "kind":"tokenType",
             "tokenType":"kind",
 
-            "base":"lemma",
-            "lemma":"base"
+            "root":"lemma",
+            "lemma":"root"
     ]
 
     String get(String name) {
