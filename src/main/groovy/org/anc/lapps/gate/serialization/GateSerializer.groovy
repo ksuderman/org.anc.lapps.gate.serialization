@@ -25,14 +25,14 @@ class GateSerializer {
     static public String toJson(Document document) {
         logger.debug("Generating JSON")
         Container container = convertToContainer(document)
-        Data<Container> data = new Data<>(Uri.LAPPS, container)
+        Data<Container> data = new Data<>(Uri.LIF, container)
         return data.asJson();
     }
 
     static public String toPrettyJson(Document document) {
         logger.debug("Generating pretty JSON")
         Container container = convertToContainer(document)
-        Data<Container> data = new Data<>(Uri.LAPPS, container)
+        Data<Container> data = new Data<>(Uri.LIF, container)
         return data.asPrettyJson();
     }
 
@@ -47,7 +47,8 @@ class GateSerializer {
 
     static public void addToContainer(Container container, Document document) {
 
-        View step = new View()
+//        View step = new View()
+        View step = container.newView()
         AnnotationSet set = document.getAnnotations()
         addAnnotationSet(set, step)
         document.namedAnnotationSets.each { name, aset ->

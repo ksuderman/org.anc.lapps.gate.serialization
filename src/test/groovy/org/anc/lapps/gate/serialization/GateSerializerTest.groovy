@@ -2,10 +2,6 @@ package org.anc.lapps.gate.serialization
 
 import org.anc.util.Counter
 
-//import org.anc.lapps.client.RemoteService
-//import org.lappsgrid.api.*
-//import org.lappsgrid.discriminator.Types
-
 import org.junit.*
 import org.lappsgrid.serialization.Data
 import org.lappsgrid.serialization.DataContainer
@@ -18,7 +14,7 @@ import org.lappsgrid.serialization.lif.Annotation
 
 import static org.junit.Assert.*
 
-import org.anc.lapps.serialization.*
+//import org.anc.lapps.serialization.*
 
 import gate.*
 import org.anc.resource.*
@@ -36,7 +32,7 @@ public class GateSerializerTest {
 
         initialized = true
         //TODO this is obviously non-portable...
-        Gate.setGateHome(new File('/Applications/GATE_Developer_8.1/'))
+        Gate.setGateHome(new File('/Applications/GATE_Developer_8.4.1/'))
         Gate.init()
     }
 
@@ -122,11 +118,79 @@ public class GateSerializerTest {
         assert url != null
         Document document = Factory.newDocument(url);
         Container container = GateSerializer.convertToContainer(document);
-        println Serializer.toPrettyJson(container)
 
         assert 1 == container.views.size()
         List<View> views = container.findViewsThatContain(Uri.LEMMA)
         assert 1 == views.size()
+
+        View view = views[0]
+        List<Annotation> tokens = view.annotations.findAll { it.atType == Uri.TOKEN };
+        assert 6 == tokens.size()
+        tokens.each { Annotation a ->
+            assert a.features.lemma != null
+        }
+    }
+
+    @Test
+    void ner() {
+        InputStream stream = this.class.getResourceAsStream("/gate-ner.lif")
+        assert stream != null
+
+        Data data = Serializer.parse(stream.text)
+        assert Uri.GATE == data.discriminator
+
+        String xml = data.payload.toString()
+        Document document = Factory.newDocument(xml)
+        Container container = GateSerializer.convertToContainer(document)
+
+        // The old types that should no appear in LIF anymore.
+        List<String> forbiddenTypes = [ Uri.PERSON, Uri.LOCATION, Uri.DATE, Uri.ORGANIZATION ]
+
+        // Check the forbidden types do not appear in the metadata.
+        forbiddenTypes.each { String type ->
+            assert 0 == container.findViewsThatContain(type).size()
+        }
+
+        List<View> views = container.findViewsThatContain(Uri.NE)
+        assert 1 == views.size()
+
+        // Check that the forbidden types do not appear as annotations.
+        View view = views[0]
+        forbiddenTypes.each { String forbidden ->
+            assert 0 == view.annotations.findAll { it.atType == forbidden }.size()
+        }
+    }
+
+    @Test
+    void format() {
+        InputStream stream = this.class.getResourceAsStream("/gate-ner.lif")
+        assert stream != null
+
+        Data data = Serializer.parse(stream.text)
+        assert Uri.GATE == data.discriminator
+
+        String xml = data.payload.toString()
+        Document document = Factory.newDocument(xml)
+
+        String json = GateSerializer.toJson(document)
+        data = Serializer.parse(json)
+        assert Uri.LIF == data.discriminator
+    }
+
+    @Test
+    void prettyFormat() {
+        InputStream stream = this.class.getResourceAsStream("/gate-ner.lif")
+        assert stream != null
+
+        Data data = Serializer.parse(stream.text)
+        assert Uri.GATE == data.discriminator
+
+        String xml = data.payload.toString()
+        Document document = Factory.newDocument(xml)
+
+        String json = GateSerializer.toPrettyJson(document)
+        data = Serializer.parse(json)
+        assert Uri.LIF == data.discriminator
     }
 
     @Ignore
