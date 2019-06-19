@@ -21,6 +21,8 @@ class GateSerializer {
 
     static AnnotationMapper annotationMapper = new AnnotationMapper()
     static FeatureMapper featureMapper = new FeatureMapper()
+    static final Set IGNORED = [ 'SpaceToken', 'Split', 'Lookup',  ] as HashSet
+    static final Set<String> INCLUDE = ['Token','Sentence','NounChunk', 'VerbChunk','NamedEntity','Person','Location','Organization','Date','gene']
 
     static public String toJson(Document document) {
         logger.debug("Generating JSON")
@@ -47,34 +49,40 @@ class GateSerializer {
 
     static public void addToContainer(Container container, Document document) {
 
-//        View step = new View()
-        View step = container.newView()
-        AnnotationSet set = document.getAnnotations()
-        addAnnotationSet(set, step)
-        document.namedAnnotationSets.each { name, aset ->
-            logger.debug("Processing annotation set {}", name)
-            addAnnotationSet(aset, step)
-        }
-
         // TODO Need to filter out the document features added by GATE from the
         // features we are interested in.
         logger.debug("Processing document features.")
         FeatureMap features = document.getFeatures()
         if (features) {
             logger.trace("There are {} document features.", features.size())
-            features.each { key, value ->
+            features.each { String key, value ->
                 logger.trace("Feature {} = \"{}\"", key, value)
                 if (key.startsWith("lapps:") && value instanceof String) try {
                     key = key[6..-1]
-                    logger.debug "Key is {}", key
                     String[] parts = value.split(' ')
                     if (parts.size() == 3) {
                         // TODO the stepNumber should be used to order the processing
                         // steps in the container.
+                        String type = key
+                        int index = type.indexOf('#')
+                        if (index > 0) {
+                            type = type.substring(0, index)
+                        }
+                        View view
+                        List<View> views = container.findViewsThatContain(type)
+                        if (views == null || views.size() == 0) {
+//                            println "Creating view for $type"
+                            view = container.newView()
+                        }
+                        else {
+                            view = views[-1]
+//                            println "Using view ${view.id}"
+                        }
                         String stepNumber = parts[0]
+                        view.metadata.step = stepNumber as Integer
                         String producer = parts[1]
-                        String type = parts[2]
-                        step.addContains(key, producer, type)
+                        type = parts[2]
+                        view.addContains(key, producer, type)
                     }
                 }
                 catch (Throwable e) {
@@ -82,34 +90,62 @@ class GateSerializer {
                 }
             }
         }
-        container.views << step
-        //logger.debug("Document added to container.")
+
+        AnnotationSet set = document.getAnnotations()
+        addAnnotationSet(set, container)
+        document.namedAnnotationSets.each { name, aset ->
+            addAnnotationSet(aset, container)
+        }
+
+        List<View> deleteme = []
+        container.views.each { View view ->
+            if (view.annotations.size() == 0) {
+                deleteme.add(view)
+            }
+        }
+        if (deleteme.size() > 0) {
+            deleteme.each { View view ->
+                logger.debug("Removing empty view {}", view.id)
+                container.views.remove(view)
+            }
+        }
     }
 
-    private static void addAnnotationSet(AnnotationSet set, View view) {
+    private View getView(Container container, String type) {
+        int index = type.indexOf('#')
+        if (index > 0) {
+            type = type.substring(0, index)
+        }
+        View result
+        List<View> views = container.findViewsThatContain(type)
+        if (views == null || views.size() == 0) {
+            return container.newView()
+        }
+        return views[-1]
+    }
+
+    private static void addAnnotationSet(AnnotationSet set, Container container) {
         set.each { gateAnnotation ->
-            Annotation annotation = annotationMapper.create(gateAnnotation.type)
-            String setName = set.getName()
-            if (setName != null) {
-                annotation.metadata['gate:set'] = setName
+            if (INCLUDE.contains(gateAnnotation.type)) {
+                Annotation annotation = annotationMapper.create(gateAnnotation.type, container)
+                String setName = set.getName()
+                if (setName != null) {
+                    annotation.metadata['gate:set'] = setName
+                }
+                annotation.id = gateAnnotation.getId()
+                annotation.start = gateAnnotation.startNode.offset.longValue()
+                annotation.end = gateAnnotation.endNode.offset.longValue()
+                annotation.label = gateAnnotation.type
+                gateAnnotation.features.each { key, value ->
+                    def mappedKey = featureMapper.get(key)
+                    annotation.features[mappedKey] = value
+                }
             }
-            annotation.id = gateAnnotation.getId()
-            annotation.start = gateAnnotation.startNode.offset.longValue()
-            annotation.end = gateAnnotation.endNode.offset.longValue()
-            annotation.label = gateAnnotation.type
-            gateAnnotation.features.each { key, value ->
-                def mappedKey = featureMapper.get(key)
-                annotation.features[mappedKey] = value
-            }
-            view.annotations << annotation
         }
     }
 
     static public Document convertToDocument(Container container) {
-        //logger.debug("Converting container to GATE document")
         Document document = gate.Factory.newDocument(container.text)
-        //logger.debug("Document created.")
-        //Map annotationSets = [:]
 
         List list = []
         int i = 0
@@ -129,14 +165,11 @@ class GateSerializer {
                 Long start = annotation.start
                 Long end = annotation.end
                 // TODO map annotation names
-//                String label = annotation.label
-//                String key = annotation.atType ?: annotation.label
                 String label = annotationMapper.get(annotation)
                 FeatureMap features = gate.Factory.newFeatureMap()
                 annotation.features.each { name, value ->
                     // TODO map feature names
                     features.put(featureMapper.get(name), value)
-//                    features.put(name, value)
                 }
                 try {
                     if (id > 0) {

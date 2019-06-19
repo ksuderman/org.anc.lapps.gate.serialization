@@ -119,7 +119,7 @@ public class GateSerializerTest {
         Document document = Factory.newDocument(url);
         Container container = GateSerializer.convertToContainer(document);
 
-        assert 1 == container.views.size()
+        assert 2 == container.views.size()
         List<View> views = container.findViewsThatContain(Uri.LEMMA)
         assert 1 == views.size()
 
@@ -129,6 +129,7 @@ public class GateSerializerTest {
         tokens.each { Annotation a ->
             assert a.features.lemma != null
         }
+        println Serializer.toPrettyJson(container)
     }
 
     @Test
@@ -142,6 +143,7 @@ public class GateSerializerTest {
         String xml = data.payload.toString()
         Document document = Factory.newDocument(xml)
         Container container = GateSerializer.convertToContainer(document)
+        assert 3 == container.views.size()
 
         // The old types that should no appear in LIF anymore.
         List<String> forbiddenTypes = [ Uri.PERSON, Uri.LOCATION, Uri.DATE, Uri.ORGANIZATION ]
@@ -159,6 +161,7 @@ public class GateSerializerTest {
         forbiddenTypes.each { String forbidden ->
             assert 0 == view.annotations.findAll { it.atType == forbidden }.size()
         }
+        println Serializer.toPrettyJson(container)
     }
 
     @Test

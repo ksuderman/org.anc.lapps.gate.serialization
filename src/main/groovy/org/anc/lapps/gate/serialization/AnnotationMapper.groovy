@@ -1,6 +1,8 @@
 package org.anc.lapps.gate.serialization
 
 import org.lappsgrid.serialization.lif.Annotation
+import org.lappsgrid.serialization.lif.Container
+import org.lappsgrid.serialization.lif.View
 
 import static org.lappsgrid.discriminator.Discriminators.Uri
 //import org.lappsgrid.vocabulary.*
@@ -22,7 +24,8 @@ class AnnotationMapper { //extends HashMap {
             'Organization':Uri.ORGANIZATION,
             'NounChunk':Uri.NCHUNK,
             'VerbChunk':Uri.VCHUNK,
-            'NamedEntity': Uri.NE
+            'NamedEntity': Uri.NE,
+            'gene':'http://vocab.lappsgrid.org/Gene'
     ]
     static final Set NE = [ 'Person', 'Date', 'Location', 'Organization' ] as HashSet
 
@@ -35,15 +38,32 @@ class AnnotationMapper { //extends HashMap {
         }
     }
 
-    Annotation create(String type) {
-        Annotation annotation = new Annotation()
+    Annotation create(final String type, Container container) {
+        String lappsType
+        boolean addCategory = false
         if (NE.contains(type)) {
-            annotation.atType = Uri.NE
-            annotation.features.category = type.toUpperCase()
+            lappsType = Uri.NE
+            addCategory = true
         }
         else {
-            annotation.atType = get(type)
+            lappsType = get(type)
         }
+        View view = null
+        List<View> views = container.findViewsThatContain(lappsType)
+        if (views == null || views.size() == 0) {
+            view = container.newView()
+            view.addContains(lappsType, 'GATE', 'unknown')
+            println "Creating view ${view.id} for $lappsType"
+        }
+        else {
+            view = views[-1]
+        }
+
+        Annotation annotation = view.newAnnotation()
+        if (addCategory) {
+            annotation.features.category = type.toUpperCase()
+        }
+        annotation.atType = lappsType
         return annotation
     }
 
