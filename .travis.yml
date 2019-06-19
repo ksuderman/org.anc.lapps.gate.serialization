@@ -1,4 +1,6 @@
 language: java
+jvm:
+  - openjdk8
 branches:
   only:
   - develop

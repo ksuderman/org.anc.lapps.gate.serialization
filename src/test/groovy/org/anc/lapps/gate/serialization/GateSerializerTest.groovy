@@ -32,7 +32,7 @@ public class GateSerializerTest {
 
         initialized = true
         //TODO this is obviously non-portable...
-        Gate.setGateHome(new File('/Applications/GATE_Developer_8.4.1/'))
+        Gate.setGateHome(new File('/usr/local/lapps/gate_abner/'))
         Gate.init()
     }
 
