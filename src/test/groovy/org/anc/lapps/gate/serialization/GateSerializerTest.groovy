@@ -26,14 +26,21 @@ public class GateSerializerTest {
 
     public static boolean initialized = false
 
+    @BeforeClass
+    static void init() {
+        File GATE_HOME = new File('/usr/local/lapps/gate_abner/')
+        assert GATE_HOME.exists()
+        Gate.setGateHome(GATE_HOME)
+        Gate.init()
+    }
+
     @Before
     void setup() {
-        if (initialized) return
 
-        initialized = true
+//        if (initialized) return
+//
+//        initialized = true
         //TODO this is obviously non-portable...
-        Gate.setGateHome(new File('/usr/local/lapps/gate_abner/'))
-        Gate.init()
     }
 
     @Ignore
