@@ -18,6 +18,8 @@ before_install:
   - wget https://downloads.lappsgrid.org/gate_abner.tgz
   - tar xzf gate_abner.tgz
   - chmod +x deploy.sh
+  - alias mvn_install="mvn --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true -B -V install"
+  - alias mvn_test="mvn --settings settings.xml -Dmaven.javadoc.skip=true -B -V clean test"
 stages:
 - name: Unit Tests
   if: branch = develop
@@ -28,16 +30,14 @@ stages:
 jobs:
   include:
   - stage: Unit Tests
-    install: mvn --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
-      -Pdevelop -B -V install
-    script: mvn --settings settings.xml -Pdevelop clean test
+    install: mvn_install -Pdevelop
+    script: mvn_test -Pdevelop
   - stage: Staging
-    install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
-      -Pstaging -B -V
-    script: mvn clean test --settings settings.xml -Dmaven.javadoc.skip=true -Pstaging
-      -B -V
-    after_success: "./deploy.sh"
+    install: mvn_install -Pstaging
+    script: mvn_test -Pstaging
+    deploy:
+      provider: script
+      script: ./deploy.sh
   - stage: Master
-    install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
-      -B -V
+    install: mvn_install
     script: mvn --settings settings.xml package
