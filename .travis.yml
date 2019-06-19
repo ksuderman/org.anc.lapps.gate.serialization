@@ -1,29 +1,41 @@
 language: java
 branches:
   only:
-    - develop
-    - master
-    - /release.*/
+  - develop
+  - master
+  - "/release.*/"
 env:
   global:
+  - secure: UmIlgcRHiOB88q4WtegKxb7K4a+uqdBHsrRA5nEDyrgkIMenZsVA1N0h0uczu6guSqtyCoWG6SMsjt9NU322Ev4zrCA/WDtADJTx1WAurpx/bJLWcrmtL8/NDjQpq9B1i9FVLH88mpeW+RTUVO739nyqNzD4VYvTW2vZCuPVt44=
+  - secure: Ys8vlE6owct8UmRIV+J8SiQSX7pdAU6+uyjGMxXVIPquvDtv2NR/dgWssDAlQUkBRVQPQzANVO40yhUwLl8FtDQTsn97Ewpsdse/X/NQa0VWD1ayxHDFFJUsSs8jL9HnsNOGdQLoz6gFDb8uLk5pgHXzVu8UM0XmKnn0cf+ELOw=
+  - secure: Dp8uCxvMY58V9jwbBrIk7Q1qBtI1bRM0nyDbJqC8Ut0aDgGeyuCJipUWouj98bWoUbRA6IodJ++6BL19fWZGr9iE9ML2AtMmo8sRUU3+PlM0AVHuPeQWbZmXTG0luLRfSZIp1x0PSEf9i5xZn/mbg97Qj64QHuD438kjPpev62I=
+  - secure: QCt3tkRJiuxmpYwjBH/sdRe2gVpce6zhgJA5A7XCSo/nJJRwixocQptq4VayPNSgRM6ScPZPr0NW+7ZOXmv/ecyAoYrbLyrezIfN6uxArXKHEVJszpLan8ndOjW8tKVeNqbfM0yhy2sw+W6YyeDB82XbQG/ujr+pVzJFZi1a04o=
+  - secure: hMe4YLjjNOY19R22LASeRlPbec4zEzxy43WtWHDWrYpMhqsJl/Fy2A0/UaQD1JQeIPLMgfRb/VlFhMvsr4nSrXBVi17Cu+8AQXbrnBZT0CUAWF8J73gw2QLjeRL4m+SP+AkwNEGlGkF26jR5kLMkhsZskYJvsIddS0g8emQVbaI=
+  - secure: JdoFZsU/1aGsmdoLIDVSpzgo0DhhNqrJyKmlFNnrGf8LdUTHuCu5Mb7JE4xLIEOx7F6bMxIl+cteO8wgQZPlKS6lkXxR7ACQCOVJ3EkYEVYGubn7JnJ5LQpkE4lwszOLTATyXFYuUWpDpD8ZbLRqVacx99FsEisespubNbSsj1A=
+before_install:
+  - wget https://downloads.lappsgrid.org/gate_abner.tgz
+  - tar xzf gate_abner.tgz
+  - chmod +x deploy.sh
 stages:
-  - name: Unit Tests
-    if: branch = develop
-  - name: Staging
-    if: branch =~ ^release
-  - name: Master
-    if: branch = master
+- name: Unit Tests
+  if: branch = develop
+- name: Staging
+  if: branch =~ ^release
+- name: Master
+  if: branch = master
 jobs:
   include:
-    - stage: Unit Tests
-      install: mvn --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
-        -Pdevelop -B -V install
-      script: mvn --settings settings.xml -Pdevelop clean test
-    - stage: Staging
-      before_install: chmod +x deploy.sh
-      install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true -Pstaging -B -V
-      script: mvn clean test --settings settings.xml -Dmaven.javadoc.skip=true -Pstaging -B -V
-      after_success: ./deploy.sh
-    - stage: Master
-      install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      script: mvn --settings settings.xml package
+  - stage: Unit Tests
+    install: mvn --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
+      -Pdevelop -B -V install
+    script: mvn --settings settings.xml -Pdevelop clean test
+  - stage: Staging
+    install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
+      -Pstaging -B -V
+    script: mvn clean test --settings settings.xml -Dmaven.javadoc.skip=true -Pstaging
+      -B -V
+    after_success: "./deploy.sh"
+  - stage: Master
+    install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true
+      -B -V
+    script: mvn --settings settings.xml package
