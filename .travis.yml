@@ -16,7 +16,7 @@ env:
   - secure: JdoFZsU/1aGsmdoLIDVSpzgo0DhhNqrJyKmlFNnrGf8LdUTHuCu5Mb7JE4xLIEOx7F6bMxIl+cteO8wgQZPlKS6lkXxR7ACQCOVJ3EkYEVYGubn7JnJ5LQpkE4lwszOLTATyXFYuUWpDpD8ZbLRqVacx99FsEisespubNbSsj1A=
 before_install:
   - wget https://downloads.lappsgrid.org/gate_abner.tgz
-  - tar xzf gate_abner.tgz
+  - cp gate_abner.tgx / && cd / && tar xzf gate_abner.tgz && ls /usr/local/lapps
   - chmod +x deploy.sh
 stages:
 - name: Unit Tests
