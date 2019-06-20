@@ -40,8 +40,14 @@ class AnnotationMapper { //extends HashMap {
 
     Annotation create(final String type, Container container) {
         String lappsType
+        String category = type //.toUpperCase()
         boolean addCategory = false
-        if (NE.contains(type)) {
+        if ("AbnerTagger" == type) {
+            lappsType = Uri.NE
+            category = 'Protein'
+            addCategory = true
+        }
+        else if (NE.contains(type)) {
             lappsType = Uri.NE
             addCategory = true
         }
@@ -61,8 +67,9 @@ class AnnotationMapper { //extends HashMap {
 
         Annotation annotation = view.newAnnotation()
         if (addCategory) {
-            annotation.features.category = type.toUpperCase()
+            annotation.features.category = category
         }
+        annotation.label = category
         annotation.atType = lappsType
         return annotation
     }

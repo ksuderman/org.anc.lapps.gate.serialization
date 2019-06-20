@@ -22,7 +22,7 @@ class GateSerializer {
     static AnnotationMapper annotationMapper = new AnnotationMapper()
     static FeatureMapper featureMapper = new FeatureMapper()
     static final Set IGNORED = [ 'SpaceToken', 'Split', 'Lookup',  ] as HashSet
-    static final Set<String> INCLUDE = ['Token','Sentence','NounChunk', 'VerbChunk','NamedEntity','Person','Location','Organization','Date','gene']
+    static final Set<String> INCLUDE = ['Token','Sentence','NounChunk', 'VerbChunk','NamedEntity','Person','Location','Organization','Date','gene', 'AbnerTagger']
 
     static public String toJson(Document document) {
         logger.debug("Generating JSON")
@@ -135,10 +135,14 @@ class GateSerializer {
                 annotation.id = gateAnnotation.getId()
                 annotation.start = gateAnnotation.startNode.offset.longValue()
                 annotation.end = gateAnnotation.endNode.offset.longValue()
-                annotation.label = gateAnnotation.type
+//                annotation.label = gateAnnotation.type
                 gateAnnotation.features.each { key, value ->
                     def mappedKey = featureMapper.get(key)
                     annotation.features[mappedKey] = value
+                }
+                //FIXME Hack-around for AbnerTagger output.
+                if (gateAnnotation.type == "AbnerTagger") {
+                    annotation.features.remove('type')
                 }
             }
         }
