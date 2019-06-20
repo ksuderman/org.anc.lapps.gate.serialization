@@ -1,5 +1,9 @@
 package org.anc.lapps.gate.serialization
 
+import org.lappsgrid.serialization.lif.Annotation
+import org.lappsgrid.serialization.lif.Container
+import org.lappsgrid.serialization.lif.View
+
 import static org.lappsgrid.discriminator.Discriminators.Uri
 //import org.lappsgrid.vocabulary.*
 
@@ -19,8 +23,11 @@ class AnnotationMapper { //extends HashMap {
             'Location':Uri.LOCATION,
             'Organization':Uri.ORGANIZATION,
             'NounChunk':Uri.NCHUNK,
-            'VerbChunk':Uri.VCHUNK
+            'VerbChunk':Uri.VCHUNK,
+            'NamedEntity': Uri.NE,
+            'gene':'http://vocab.lappsgrid.org/Gene'
     ]
+    static final Set NE = [ 'Person', 'Date', 'Location', 'Organization' ] as HashSet
 
     Map map = [:]
 
@@ -29,6 +36,53 @@ class AnnotationMapper { //extends HashMap {
             map[name] = value
             map[value] = name
         }
+    }
+
+    Annotation create(final String type, Container container) {
+        String lappsType
+        boolean addCategory = false
+        if (NE.contains(type)) {
+            lappsType = Uri.NE
+            addCategory = true
+        }
+        else {
+            lappsType = get(type)
+        }
+        View view = null
+        List<View> views = container.findViewsThatContain(lappsType)
+        if (views == null || views.size() == 0) {
+            view = container.newView()
+            view.addContains(lappsType, 'GATE', 'unknown')
+            println "Creating view ${view.id} for $lappsType"
+        }
+        else {
+            view = views[-1]
+        }
+
+        Annotation annotation = view.newAnnotation()
+        if (addCategory) {
+            annotation.features.category = type.toUpperCase()
+        }
+        annotation.atType = lappsType
+        return annotation
+    }
+
+    String get(Annotation a) {
+        String type = a.atType
+        if (type.endsWith('NamedEntity')) {
+            if (a.features.category) {
+                type = a.features.category.toLowerCase().capitalize()
+                a.features.remove('category')
+            }
+            else {
+                type = 'NamedEntity'
+            }
+        }
+        else {
+            int index = a.atType.lastIndexOf('/') + 1
+            type = a.atType.substring(index)
+        }
+        return type
     }
 
     String get(String key) {
