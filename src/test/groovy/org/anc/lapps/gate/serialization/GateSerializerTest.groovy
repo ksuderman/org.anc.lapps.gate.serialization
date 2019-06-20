@@ -283,4 +283,13 @@ public class GateSerializerTest {
         }
     }
     */
+
+    @Test
+    void convertAbner() {
+        InputStream stream = this.class.getResourceAsStream("/gate-abner.xml")
+        assert null != stream
+//        Data data = new Data(Uri.LIF, stream.text)
+        Document document = Factory.newDocument(stream.text)
+        println GateSerializer.toPrettyJson(document)
+    }
 }
