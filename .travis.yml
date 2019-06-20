@@ -15,9 +15,9 @@ env:
   - secure: hMe4YLjjNOY19R22LASeRlPbec4zEzxy43WtWHDWrYpMhqsJl/Fy2A0/UaQD1JQeIPLMgfRb/VlFhMvsr4nSrXBVi17Cu+8AQXbrnBZT0CUAWF8J73gw2QLjeRL4m+SP+AkwNEGlGkF26jR5kLMkhsZskYJvsIddS0g8emQVbaI=
   - secure: JdoFZsU/1aGsmdoLIDVSpzgo0DhhNqrJyKmlFNnrGf8LdUTHuCu5Mb7JE4xLIEOx7F6bMxIl+cteO8wgQZPlKS6lkXxR7ACQCOVJ3EkYEVYGubn7JnJ5LQpkE4lwszOLTATyXFYuUWpDpD8ZbLRqVacx99FsEisespubNbSsj1A=
 before_install:
-  - wget https://downloads.lappsgrid.org/gate_abner.tgz
-  - cp gate_abner.tgz / && cd / && tar xzf gate_abner.tgz && ls /usr/local/lapps
   - chmod +x deploy.sh
+  - chmod +x setup.sh
+  - sudo ./setup.sh
 stages:
 - name: Unit Tests
   if: branch = develop
