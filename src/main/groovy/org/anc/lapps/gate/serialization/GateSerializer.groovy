@@ -127,23 +127,23 @@ class GateSerializer {
     private static void addAnnotationSet(AnnotationSet set, Container container) {
         set.each { gateAnnotation ->
             if (INCLUDE.contains(gateAnnotation.type)) {
-                Annotation annotation = annotationMapper.create(gateAnnotation.type, container)
+                Annotation annotation = annotationMapper.create(gateAnnotation, container)
                 String setName = set.getName()
                 if (setName != null) {
                     annotation.metadata['gate:set'] = setName
                 }
-                annotation.id = gateAnnotation.getId()
-                annotation.start = gateAnnotation.startNode.offset.longValue()
-                annotation.end = gateAnnotation.endNode.offset.longValue()
+//                annotation.id = gateAnnotation.getId()
+//                annotation.start = gateAnnotation.startNode.offset.longValue()
+//                annotation.end = gateAnnotation.endNode.offset.longValue()
 //                annotation.label = gateAnnotation.type
-                gateAnnotation.features.each { key, value ->
-                    def mappedKey = featureMapper.get(key)
-                    annotation.features[mappedKey] = value
-                }
-                //FIXME Hack-around for AbnerTagger output.
-                if (gateAnnotation.type == "AbnerTagger") {
-                    annotation.features.remove('type')
-                }
+//                gateAnnotation.features.each { key, value ->
+//                    def mappedKey = featureMapper.get(key)
+//                    annotation.features[mappedKey] = value
+//                }
+//                FIXME Hack-around for AbnerTagger output.
+//                if (gateAnnotation.type == "AbnerTagger") {
+//                    annotation.features.remove('type')
+//                }
             }
         }
     }

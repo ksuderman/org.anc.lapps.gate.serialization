@@ -1,5 +1,7 @@
 package org.anc.lapps.gate.serialization
 
+import org.lappsgrid.vocabulary.Features
+
 //import org.lappsgrid.vocabulary.Features
 
 /**
@@ -25,6 +27,18 @@ class FeatureMapper {
         String mapped = map[name]
         if (mapped) {
             return mapped
+        }
+        return name
+    }
+
+    String get(String type, String name) {
+        if (type == 'Token') {
+            return get(name)
+        }
+        if (type == 'Tagger' || type == 'AbnerTagger') {
+            if (name == 'type') {
+                return Features.NamedEntity.CATEGORY
+            }
         }
         return name
     }
